@@ -6,6 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
+import Controller from "../components/Controller";
 
 export const Hero = () => {
   // Leva controls for ThreeJS components - Uncomment to play with the controls. Add the controls to the respective components.
@@ -34,7 +35,7 @@ export const Hero = () => {
 
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const isTablet = useMediaQuery({ minWidth:768, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
@@ -57,6 +58,7 @@ export const Hero = () => {
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
+
             <HackerRoom
               position={sizes.deskPosition}
               rotation={[0, -Math.PI, 0]}
@@ -64,6 +66,10 @@ export const Hero = () => {
             />
             <ambientLight intensity={1} />
             <directionalLight intensity={0.5} position={[10, 10, 10]} />
+
+            <group>
+              <Controller position={sizes.targetPosition}/>
+            </group>
           </Suspense>
         </Canvas>
       </div>
