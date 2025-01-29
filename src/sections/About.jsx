@@ -49,13 +49,16 @@ const About = () => {
               alt="grid3"
               className="w-full sm:h-[276px] h-fit object-contain"
             />
+            <div>
             <p className="grid-headtext">Why Code?</p>
             <p className="grid-subtext">
               I have a passion for building and creating, both inside and
-              outside of work. Whether it's through coding innovative solutions
-              or assembling model kits and Lego, I enjoy bringing ideas to life
+              outside of work. Whether it's through coding innovative solutions that drive businesses forward,
+              or through simple pleasures like assembling model kits and Lego, I enjoy bringing ideas to life
               in various forms.
             </p>
+            </div>
+            
           </div>
         </div>
       </div>
