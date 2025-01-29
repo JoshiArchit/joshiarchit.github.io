@@ -1,0 +1,40 @@
+.typing-container {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .typing-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid transparent;
+    width: 0;
+    animation: typing 3s steps(14) 1s forwards, blink-caret 0.75s step-end infinite;
+  }
+  
+  .cursor {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Keyframe for typing effect */
+  @keyframes typing {
+    to {
+      width: 100%;
+      border-color: transparent;
+    }
+  }
+  
+  /* Keyframe for blinking cursor */
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: black;
+    }
+  }
+  
