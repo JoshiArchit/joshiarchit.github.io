@@ -58,8 +58,8 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: "Podcastr - AI Podcast Platform",
-    desc: "Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.",
+    title: "Reddit-Clone",
+    desc: "Reddit is a great platform for sharing and discussing content. This project is a clone of Reddit, built using React and Convex which is a server side database. It allows users to create posts, upvote and downvote posts, and comment on posts.",
     subdesc:
       "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
     href: "https://www.youtube.com/watch?v=zfAb95tJvZQ",
@@ -89,8 +89,8 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Convex",
+        path: "/assets/convex.svg",
       },
     ],
   },
@@ -281,40 +281,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
   };
 };
 
-export const workExperiences = [
-  {
-    id: 1,
-    name: "Framer",
-    pos: "Lead Web Developer",
-    duration: "2022 - Present",
-    title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/framer.svg",
-    animation: "victory",
-  },
-  {
-    id: 2,
-    name: "Figma",
-    pos: "Web Developer",
-    duration: "2020 - 2022",
-    title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.svg",
-    animation: "clapping",
-  },
-  {
-    id: 3,
-    name: "Notion",
-    pos: "Junior Web Developer",
-    duration: "2019 - 2020",
-    title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/notion.svg",
-    animation: "salute",
-  },
-];
-
-export const timelineItems = [
+export const workTimelineItems = [
   {
     id: 1,
     title: "Full Stack Developer Co-op",
@@ -324,7 +291,15 @@ export const timelineItems = [
     date: "Aug 2024 - Present",
     icon: "work",
     color: "green",
-    tech: ["Angular", "TypeScript", "C# .NET", "Snowflake", "Azure", "REST API", "Git"],
+    description: [
+      "Angular",
+      "TypeScript",
+      "C# .NET",
+      "Snowflake",
+      "Azure",
+      "REST API",
+      "Git",
+    ],
   },
   {
     id: 2,
@@ -335,7 +310,14 @@ export const timelineItems = [
     date: "August 2023-2024",
     icon: "work",
     color: "red",
-    tech: ["Python", "PyTorch", "TensorFlow", "Linux", "Git", "Jupyter Notebook"],
+    description: [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Linux",
+      "Git",
+      "Jupyter Notebook",
+    ],
   },
   {
     id: 3,
@@ -346,7 +328,14 @@ export const timelineItems = [
     date: "August 2019 - July 2022",
     icon: "work",
     color: "purple",
-    tech: ["Python", "SAP", "Networking", "Security", "IBM Cloud", "System Architecture"],
+    description: [
+      "Python",
+      "SAP",
+      "Networking",
+      "Security",
+      "IBM Cloud",
+      "System Architecture",
+    ],
   },
   {
     id: 4,
@@ -354,9 +343,55 @@ export const timelineItems = [
     location: "Pune, India",
     company: "SRV Media Pvt. Ltd.",
     buttonText: "Details",
-    date: "May 2019 - July 2019",
+    date: "May 2017 - July 2017",
     icon: "work",
     color: "orange",
-    tech: ["HTML", "CSS", "JavaScript", "Django", "PHP", "MySQL", "MongoDB", "SEO"],
-  }
+    description: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Django",
+      "PHP",
+      "MySQL",
+      "MongoDB",
+      "SEO",
+    ],
+  },
+];
+
+export const educationTimelineItems = [
+  {
+    id: 1,
+    title: "Master of Science in Computer Science",
+    location: "Rochester, NY",
+    school: "Rochester Institute of Technology",
+    date: "August 2022 - Present",
+    icon: "school",
+    color: "orange",
+    description: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Science",
+      "NoSQL / NewSQL Databases",
+      "Big Data Analytics",
+      "Web Services and Service Oriented Computing",
+    ],
+  },
+  {
+    id: 2,
+    title: "Bachelor of Technology in Information Technology",
+    location: "Pune, India",
+    school: "Symbiosis Institute of Technology",
+    date: "August 2018 - May 2022",
+    icon: "/assets/school.svg",
+    color: "blue",
+    description: [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "Database Management",
+      "Software Development",
+      "Computer Architecture",
+    ],
+  },
 ];
