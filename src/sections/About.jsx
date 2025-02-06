@@ -4,8 +4,8 @@ import Timeline from "../components/Timeline";
 const About = () => {
   return (
     <section className="c-space my-10">
-      <h3 className="head-text flex justify-center mb-10">About Me</h3>
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <h3 className="head-text flex justify-center mb-[2%]">About Me</h3>
+      <div className="grid xl:grid-cols-3 xl:grid-rows-3 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <p className="text-lg font-semibold text-white sm:head-text flex justify-center">

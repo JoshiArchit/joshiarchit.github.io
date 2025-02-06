@@ -65,6 +65,7 @@ export default function Timeline({ defaultColor, timelineType }) {
                   <span className="text-green-200">
                     {isWork ? "Tech Stack - " : "Related Course work - "}
                   </span>
+                  <br/>
                   <span className="text-gray-400">
                     {element.description.map((item, index) =>
                       index ? `,  ${item}` : item
