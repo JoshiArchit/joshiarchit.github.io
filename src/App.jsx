@@ -6,7 +6,7 @@ import Projects from './sections/Projects'
 
 const App = () => {
   return (
-    <main className="w-5/6 mx-auto px-[5%] relative">
+    <main className="w-4/5 mx-auto px-[5%] relative">
       <Navbar/>
       <Hero/>
       <About/>
