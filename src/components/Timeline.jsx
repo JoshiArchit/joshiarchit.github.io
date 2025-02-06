@@ -50,18 +50,18 @@ export default function Timeline({ defaultColor, timelineType }) {
                 </div>
               </div>
               <div className="card-details flex flex-col justify-start text-left p-[2%] flex-1 ml-5 border pd-2% opacity-100 border-green-200 rounded-lg">
-                <div className="title-card text-white text-xl font-medium text-wrap">
+                <div className="title-card  text-white text-lg font-medium text-wrap">
                   {element.title}
                 </div>
-                <div className="text-gray-200 font-medium text-xl">
+                <div className="text-gray-200 font-medium text-lg">
                   {isWork ? element.company : element.school}
                 </div>
-                <div className="text-gray-400 font-medium">
+                <div className="text-gray-400 text-sm font-medium">
                   {element.location}
                 </div>
-                <div className="text-gray-400">{element.date}</div>
+                <div className="text-gray-400 text-sm">{element.date}</div>
 
-                <div>
+                <div className="text-sm">
                   <span className="text-green-200">
                     {isWork ? "Tech Stack - " : "Related Course work - "}
                   </span>

@@ -69,7 +69,7 @@ const Projects = () => {
 
       <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
         <div className="flex flex-col projects-carousel h-full justify-between  items-center">
-          <p className="text-white w-[90%] text-lg text-center">
+          <p className="text-white w-[90%] text-base text-center">
             As a visual learner, I believe the best way to learn new technology
             is using it to build something and learning from the mistakes you
             make along the way. Please checkout some of my work below. <br />
@@ -78,7 +78,7 @@ const Projects = () => {
           </p>
           <div className="project-container flex h-full justify-between  items-center">
             <div
-              className="left-arrow arrow-btn w-[25%] flex justify-start"
+              className="left-arrow arrow-btn w-[25%] flex justify-start hover:shadow-[0_0_10px_4px] hover:shadow-blue-500 transition-shadow duration-300"
               onClick={() => handleNavigation("left")}
             >
               <button>
@@ -108,14 +108,15 @@ const Projects = () => {
                     .map((project, index) => (
                       <div
                         ref={(el) => (projectCardsRef.current[index] = el)} // Save the reference of each card
-                        className="project-card flex items-center flex-col m-[1%] bg-cover"
+                        className="project-card flex items-center flex-col  bg-cover transition-shadow duration-300 hover:shadow-[0_0_10px_4px_var(--hover-color)]"
                         style={{
                           backgroundImage: `url(${project.spotlight})`,
                           minHeight: cardHeight ? `${cardHeight}px` : "auto", // Apply the calculated height
+                          "--hover-color": project.hovercolor
                         }}
                         key={index}
                       >
-                        <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-2xl font-semibold">
+                        <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-lg font-medium">
                           <div className="project-logo w-[10%]">
                             <img
                               src={project.logo}
@@ -129,13 +130,11 @@ const Projects = () => {
                           </div>
                         </div>
 
-                        <div className="project-desc text-left text-white text-lg font-normal w-full">
+                        <div className="project-desc flex flex-col flex-grow text-left text-[#afb0b6] text-sm font-normal w-full">
                           <p>{project.desc}</p>
                           <br />
                           <p>{project.subdesc}</p>
                         </div>
-
-                        <div className="spacer flex flex-grow" />
 
                         <div className="project-footer flex justify-between w-full">
                           <div className="project-stack flex gap-2">
@@ -145,7 +144,7 @@ const Projects = () => {
                                 src={tech.path}
                                 alt={tech.name}
                                 title={tech.name}
-                                className="w-10 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]"
+                                className="w-8 h-8 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]"
                               />
                             ))}
                           </div>
@@ -159,7 +158,7 @@ const Projects = () => {
                               <img
                                 src="assets/github.svg"
                                 alt="github"
-                                className="w-10 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(239,68,68,0.5)]"
+                                className="w-8 h-8 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(239,68,68,0.5)]"
                                 title="Check it out on GitHub"
                               />
                             </a>
@@ -172,7 +171,7 @@ const Projects = () => {
             </div>
 
             <div
-              className="right-arrow arrow-btn w-[25%] flex justify-end"
+              className="right-arrow arrow-btn w-[25%] flex justify-end hover:shadow-[0_0_10px_4px] hover:shadow-blue-500 transition-shadow duration-300"
               onClick={() => handleNavigation("right")}
             >
               <button>

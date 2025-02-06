@@ -17,7 +17,7 @@ export const Hero = () => {
     >
       <div className="w-full mx-auto flex flex-col sm:mt-25 mt-20 gap-3 px-4 sm:px-8">
         <div className="typewriter-container w-fit text-center mx-auto">
-          <p className="typewriter sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
+          <p className="typewriter sm:text-2xl text-xl font-medium text-white text-center font-generalsans">
             Hi, I'm Archit <span className="waving-hand">👋</span>
           </p>
         </div>
@@ -29,18 +29,21 @@ export const Hero = () => {
         </p>
       </div>
 
-      <section className="grid grid-cols-1 sm:grid-cols-4 w-full gap-5 mt-10">
+      <section className="grid grid-cols-1 sm:grid-cols-4 w-full gap-3 mt-10">
         <div className="bio-container grid-container col-span-1 sm:col-span-2">
-          <img
-            src="/assets/sprite.png"
-            alt="grid1"
-            className="w-full sm:h-[276px] h-fit object-contain "
-          />
+          <div className="image-container flex justify-center items-center w-full h-full">
+            <img
+              src="/assets/sprite.png"
+              alt="grid1"
+              className="object-contain"
+            />
+          </div>
+
           <div className="bio-section flex flex-col justify-center items-center text-center">
-            <p className="text-lg font-semibold text-white sm:grid-headtext">
+            <p className=" font-semibold text-white sm:grid-headtext">
               Hi! I'm Archit
             </p>
-            <p className="text-base text-[#afb0b6]  sm:grid-subtext">
+            <p className="text-xl text-[#afb0b6]  sm:grid-subtext">
               Grad Student, Software Engineer, AI and Machine learning
               enthusiast, Gamer and the occasional artist. <br />
               Looking to leverage my software engineering skills and critical
@@ -53,8 +56,8 @@ export const Hero = () => {
             </p>
           </div>
 
-          <div className="grid-container socials-section flex justify-center items-center gap-5 mt-5">
-            <div className="socials-header head-text text-center m-0 text-lg font-semibold sm:text-4xl">
+          <div className="grid-container socials-section flex justify-center items-center">
+            <div className="socials-header head-text text-center m-0 font-semibold">
               Reach me at
             </div>
 
@@ -106,7 +109,7 @@ export const Hero = () => {
         <div className="timeline-container grid-container col-span-1 sm:col-span-2 h-full w-full flex items-center justify-center relative">
           {/* Timeline items */}
           <div className="w-full">
-            <p className="text-center m-0 text-lg font-semibold head-text sm:text-4xl">
+            <p className="text-center m-0 text-lg font-semibold head-text">
               Work Experience
             </p>
             <Timeline defaultColor={"bg-green-500"} timelineType={"work"} />
