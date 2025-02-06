@@ -32,9 +32,9 @@ export const Hero = () => {
       <section className="grid grid-cols-1 sm:grid-cols-4 w-full gap-5 mt-10">
         <div className="bio-container grid-container col-span-1 sm:col-span-2">
           <img
-            src="/assets/grid1.png"
+            src="/assets/sprite.png"
             alt="grid1"
-            className="w-full sm:h-[276px] h-fit object-contain"
+            className="w-full sm:h-[276px] h-fit object-contain "
           />
           <div className="bio-section flex flex-col justify-center items-center text-center">
             <p className="text-lg font-semibold text-white sm:grid-headtext">

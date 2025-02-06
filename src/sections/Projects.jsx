@@ -66,108 +66,119 @@ const Projects = () => {
   return (
     <>
       <h3 className="head-text text-center mb-[2%]">My Selected Work</h3>
-      <div className="hidden sm:flex projects-section h-full  flex-col mb-[2%]">
-        <div className="flex projects-carousel h-full justify-between  items-center">
-          <div
-            className="left-arrow arrow-btn w-[20%] flex justify-start"
-            onClick={() => handleNavigation("left")}
-          >
-            <button>
-              <img src="assets/left-arrow.png" alt="Left" />
-            </button>
-          </div>
 
-          <div className="project-wrapper relative w-full h-full overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={startIndex} // Keep the key as startIndex to ensure correct element rendering
-                className="relative flex flex-row text-white w-full h-full"
-                initial={{ x: direction * 100 }}
-                animate={{ x: 0 }}
-                exit={{
-                  x: -direction * 100,
-                  transition: { duration: 0.3 },
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
-              >
-                {myProjects
-                  .slice(startIndex, startIndex + projectsPerPage)
-                  .map((project, index) => (
-                    <div
-                      ref={(el) => (projectCardsRef.current[index] = el)} // Save the reference of each card
-                      className="project-card flex items-center flex-col m-[1%] bg-cover"
-                      style={{
-                        backgroundImage: `url(${project.spotlight})`,
-                        minHeight: cardHeight ? `${cardHeight}px` : "auto", // Apply the calculated height
-                      }}
-                      key={index}
-                    >
-                      <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-2xl font-semibold">
-                        <div className="project-logo w-[10%]">
-                          <img
-                            src={project.logo}
-                            alt="project-logo"
-                            style={project.logoStyle}
-                            className="rounded-lg"
-                          />
-                        </div>
-                        <div className="project-title w-[90%]">
-                          <h4>{project.title}</h4>
-                        </div>
-                      </div>
+      <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
+        <div className="flex flex-col projects-carousel h-full justify-between  items-center">
+          <p className="text-white w-[90%] text-lg text-center">
+            As a visual learner, I believe the best way to learn new technology
+            is using it to build something and learning from the mistakes you
+            make along the way. Please checkout some of my work below. <br />
+            The Github links are included for you to check out the code and the
+            tech stack icons will take you to the documentations!
+          </p>
+          <div className="project-container flex h-full justify-between  items-center">
+            <div
+              className="left-arrow arrow-btn w-[25%] flex justify-start"
+              onClick={() => handleNavigation("left")}
+            >
+              <button>
+                <img src="assets/left-arrow.png" alt="Left" />
+              </button>
+            </div>
 
-                      <div className="project-desc text-left text-white text-lg font-normal w-full">
-                        <p>{project.desc}</p>
-                        <br/>
-                        <p>{project.subdesc}</p>
-                      </div>
-
-                      <div className="spacer flex flex-grow" />
-
-                      <div className="project-footer flex justify-between w-full">
-                        <div className="project-stack flex gap-2">
-                          {project.stack.map((tech) => (
+            <div className="project-wrapper relative w-full h-full overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={startIndex} // Keep the key as startIndex to ensure correct element rendering
+                  className="relative flex flex-row text-white w-full h-full"
+                  initial={{ x: direction * 100 }}
+                  animate={{ x: 0 }}
+                  exit={{
+                    x: -direction * 100,
+                    transition: { duration: 0.3 },
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {myProjects
+                    .slice(startIndex, startIndex + projectsPerPage)
+                    .map((project, index) => (
+                      <div
+                        ref={(el) => (projectCardsRef.current[index] = el)} // Save the reference of each card
+                        className="project-card flex items-center flex-col m-[1%] bg-cover"
+                        style={{
+                          backgroundImage: `url(${project.spotlight})`,
+                          minHeight: cardHeight ? `${cardHeight}px` : "auto", // Apply the calculated height
+                        }}
+                        key={index}
+                      >
+                        <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-2xl font-semibold">
+                          <div className="project-logo w-[10%]">
                             <img
-                              key={tech.id}
-                              src={tech.path}
-                              alt={tech.name}
-                              className="w-10"
+                              src={project.logo}
+                              alt="project-logo"
+                              style={project.logoStyle}
+                              className="rounded-lg"
                             />
-                          ))}
+                          </div>
+                          <div className="project-title w-[90%]">
+                            <h4>{project.title}</h4>
+                          </div>
                         </div>
 
-                        <div className="project-links flex gap-2">
-                          <a
-                            href={project.gitLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img
-                              src="assets/github.svg"
-                              alt="github"
-                              className="w-10"
-                              title="View and Fork project on GitHub"
-                            />
-                          </a>
+                        <div className="project-desc text-left text-white text-lg font-normal w-full">
+                          <p>{project.desc}</p>
+                          <br />
+                          <p>{project.subdesc}</p>
+                        </div>
+
+                        <div className="spacer flex flex-grow" />
+
+                        <div className="project-footer flex justify-between w-full">
+                          <div className="project-stack flex gap-2">
+                            {project.stack.map((tech) => (
+                              <img
+                                key={tech.id}
+                                src={tech.path}
+                                alt={tech.name}
+                                title={tech.name}
+                                className="w-10 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]"
+                              />
+                            ))}
+                          </div>
+
+                          <div className="project-links flex gap-2">
+                            <a
+                              href={project.gitLink}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <img
+                                src="assets/github.svg"
+                                alt="github"
+                                className="w-10 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(239,68,68,0.5)]"
+                                title="Check it out on GitHub"
+                              />
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                    ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          <div
-            className="right-arrow arrow-btn w-[20%] flex justify-end"
-            onClick={() => handleNavigation("right")}
-          >
-            <button>
-              <img src="assets/right-arrow.png" alt="Right" />
-            </button>
+            <div
+              className="right-arrow arrow-btn w-[25%] flex justify-end"
+              onClick={() => handleNavigation("right")}
+            >
+              <button>
+                <img src="assets/right-arrow.png" alt="Right" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
