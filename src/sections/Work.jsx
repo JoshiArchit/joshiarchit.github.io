@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { myProjects } from "../constants/index.js";
+import { workExp } from "../constants/index.js";
 
-const Projects = () => {
+const Work = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const projectsPerPage = 3;
-  const totalProjects = myProjects.length;
+  const projectsPerPage = 2;
+  const totalProjects = workExp.length;
   const [direction, setDirection] = useState(1); // 1 for right, -1 for left
 
   const handleNavigation = (dir) => {
@@ -64,17 +64,13 @@ const Projects = () => {
   }, [startIndex]);
 
   return (
-    <section id="projects">
-      <h3 className="head-text text-center mb-[2%]">My Selected Work</h3>
+    <section id="work">
+      <h3 className="head-text text-center mb-[2%]">Work Experience</h3>
 
       <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
         <div className="flex flex-col projects-carousel h-full justify-between  items-center">
           <p className="text-white w-[90%] text-base text-center">
-            As a visual learner, I believe the best way to learn new technology
-            is using it to build something and learning from the mistakes you
-            make along the way. Please checkout some of my work below. <br />
-            The Github links are included for you to check out the code and the
-            tech stack icons will take you to the documentations!
+            With 4 years of full-time experience and over 6 years of collective leadership experience across NGOs, University leader roles and professional work environments, I have developed a strong foundation in software development & leadership. I have worked on a variety of projects ranging from web development, mobile app development, and data analysis.
           </p>
           <div className="project-container flex h-full justify-between  items-center">
             <div
@@ -103,42 +99,37 @@ const Projects = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  {myProjects
+                  {workExp
                     .slice(startIndex, startIndex + projectsPerPage)
-                    .map((project, index) => (
+                    .map((work, index) => (
                       <div
                         ref={(el) => (projectCardsRef.current[index] = el)} // Save the reference of each card
-                        className="project-card flex items-center flex-col  bg-cover transition-shadow duration-300 hover:shadow-[0_0_10px_4px_var(--hover-color)]"
+                        className="work-card flex items-center flex-col  bg-cover transition-shadow duration-300 hover:shadow-[0_0_10px_4px_var(--hover-color)]"
                         style={{
-                          backgroundImage: `url(${project.spotlight})`,
+                          backgroundImage: `url(${work.spotlight})`,
                           minHeight: cardHeight ? `${cardHeight}px` : "auto", // Apply the calculated height
-                          "--hover-color": project.hovercolor,
+                          "--hover-color": work.hovercolor,
                         }}
                         key={index}
                       >
                         <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-lg font-medium">
-                          <div className="project-logo w-[10%]">
-                            <img
-                              src={project.logo}
-                              alt="project-logo"
-                              style={project.logoStyle}
-                              className="rounded-lg"
-                            />
-                          </div>
+                          
                           <div className="project-title w-[90%]">
-                            <h4>{project.title}</h4>
+                            <h4>{work.title}</h4>
                           </div>
                         </div>
 
                         <div className="project-desc flex flex-col flex-grow text-left text-[#afb0b6] text-sm font-normal w-full">
-                          <p>{project.desc}</p>
+                          <p>{work.company}</p>
                           <br />
-                          <p>{project.subdesc}</p>
+                          <p>{work.location}</p>
+                          <p>{work.duration}</p>
+                          <p>{work.description}</p>
                         </div>
 
                         <div className="project-footer flex justify-between w-full">
                           <div className="project-stack flex gap-2">
-                            {project.stack.map((tech) => (
+                            {work.technology.map((tech) => (
                               <a
                                 href={tech.documentation}
                                 target="_blank"
@@ -157,7 +148,7 @@ const Projects = () => {
 
                           <div className="project-links flex gap-2">
                             <a
-                              href={project.gitLink}
+                              href={work.gitLink}
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -191,4 +182,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Work;

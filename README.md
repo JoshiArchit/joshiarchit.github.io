@@ -13,3 +13,4 @@
 <a target="_blank" href="https://icons8.com/icon/jH4BpkMnRrU5/pytorch">Pytorch</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a target="_blank" href="https://icons8.com/icon/2HKS2A6Tzthn/space-invaders">Space Invaders</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 Postgres, PostgreSQL and the Slonik Logo are trademarks or registered trademarks of the PostgreSQL Community Association of Canada, and used with their permission
+Stardew Valley sprite creator - https://jazzybee.itch.io/sdvcharactercreator

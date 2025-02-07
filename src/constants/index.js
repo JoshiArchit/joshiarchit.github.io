@@ -1,4 +1,4 @@
-import { p } from "framer-motion/client";
+import { p, path } from "framer-motion/client";
 
 export const navLinks = [
   {
@@ -13,48 +13,18 @@ export const navLinks = [
   },
   {
     id: 3,
+    name: "Projects",
+    href: "#projects",
+  },
+  {
+    id: 4,
     name: "Work",
     href: "#work",
   },
   {
-    id: 4,
+    id: 5,
     name: "Contact",
     href: "#contact",
-  },
-];
-
-export const clientReviews = [
-  {
-    id: 1,
-    name: "Emily Johnson",
-    position: "Marketing Director at GreenLeaf",
-    img: "assets/review1.png",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-  },
-  {
-    id: 2,
-    name: "Mark Rogers",
-    position: "Founder of TechGear Shop",
-    img: "assets/review2.png",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
-  },
-  {
-    id: 3,
-    name: "John Dohsas",
-    position: "Project Manager at UrbanTech ",
-    img: "assets/review3.png",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-  },
-  {
-    id: 4,
-    name: "Ether Smith",
-    position: "CEO of BrightStar Enterprises",
-    img: "assets/review4.png",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.",
   },
 ];
 
@@ -79,21 +49,25 @@ export const myProjects = [
         id: 1,
         name: "React.js",
         path: "/assets/react.svg",
+        documentation: "https://react.dev/"
       },
       {
         id: 2,
         name: "TailwindCSS",
         path: "assets/tailwindcss.png",
+        documentation: "https://tailwindcss.com/docs/installation/using-vite"
       },
       {
         id: 3,
         name: "TypeScript",
         path: "/assets/typescript.png",
+        documentation: "https://www.typescriptlang.org/docs/"
       },
       {
         id: 4,
         name: "Convex",
         path: "/assets/convex.svg",
+        documentation: "https://convex.dev/docs"
       },
     ],
   },
@@ -116,26 +90,31 @@ export const myProjects = [
         id: 1,
         name: "Python",
         path: "/assets/python.png",
+        documentation: "https://docs.python.org/3/"
       },
       {
         id: 2,
         name: "MongoDB",
         path: "assets/mongo.png",
+        documentation: "https://docs.mongodb.com/"
       },
       {
         id: 3,
         name: "PostGreSQL",
         path: "/assets/postgresql.png",
+        documentation: "https://www.postgresql.org/docs/"
       },
       {
         id: 4,
         name: "Numpy",
         path: "/assets/numpy.svg",
+        documentation: "https://numpy.org/doc/stable/"
       },
       {
         id: 5,
         name: "Pandas",
         path: "/assets/pandas.png",
+        documentation: "https://pandas.pydata.org/docs/"
       }
     ],
   },
@@ -158,31 +137,37 @@ export const myProjects = [
         id: 1,
         name: "Python",
         path: "/assets/python.png",
+        documentation: "https://docs.python.org/3/"
       },
       {
         id: 2,
         name: "Snort",
         path: "assets/tools.svg",
+        documentation: "https://www.snort.org/documents"
       },
       {
         id: 3,
         name: "Suricata",
         path: "/assets/tools.svg",
+        documentation: "https://suricata-ids.org/docs/"
       },
       {
         id: 4,
         name: "TensorFlow",
         path: "/assets/tensorflow.svg",
+        documentation: "https://www.tensorflow.org/guide"
       },
       {
         id: 5,
         name: "PyTorch",
         path: "/assets/pytorch.svg",
+        documentation: "https://pytorch.org/docs/stable/index.html"
       },
       {
         id: 6,
         name: "Pandas",
         path: "/assets/pandas.png",
+        documentation: "https://pandas.pydata.org/docs/"
       }
     ],
   },
@@ -205,51 +190,130 @@ export const myProjects = [
         id: 1,
         name: "Python",
         path: "/assets/python.png",
+        documentation: "https://docs.python.org/3/"
       },
       {
         id: 2,
         name: "PyGame",
         path: "assets/game.png",
+        documentation: "https://www.pygame.org/docs/"
       }
     ],
   }
   
 ];
 
-export const calculateSizes = (isSmall, isMobile, isTablet) => {
-  return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall
-      ? [4, -5, 0]
-      : isMobile
-        ? [5, -5, 0]
-        : isTablet
-          ? [5, -5, 0]
-          : [9, -5.5, 0],
-    reactLogoPosition: isSmall
-      ? [3, 4, 0]
-      : isMobile
-        ? [5, 4, 0]
-        : isTablet
-          ? [5, 4, 0]
-          : [12, 3, 0],
-    ringPosition: isSmall
-      ? [-5, 7, 0]
-      : isMobile
-        ? [-10, 10, 0]
-        : isTablet
-          ? [-12, 10, 0]
-          : [-24, 10, 0],
-    targetPosition: isSmall
-      ? [-5, -10, -10]
-      : isMobile
-        ? [-9, -10, -10]
-        : isTablet
-          ? [-11, -7, -10]
-          : [-13, -13, -10],
-  };
-};
+export const workExp = [
+  {
+    id: 1,
+    title: "Full Stack Developer Co-op",
+    location: "Saint Paul, MN",
+    company: "Ecolab",
+    duration: "Aug 2024 - Present",
+    hovercolor: "#5271CA",
+    spotlight: "/assets/spotlight2.png",
+    technology : [
+      {
+        id: 1,
+        name: "Angular",
+        path: "/assets/python.png",
+        documentation: "https://angular.io/docs"
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
+        documentation: "https://www.typescriptlang.org/docs/"
+      },
+      {
+        id: 3,
+        name: "C# .NET",
+        path: "/assets/dotnet.png",
+        documentation: "https://docs.microsoft.com/en-us/dotnet/"
+      },
+      {
+        id: 4,
+        name: "Snowflake",
+        path: "/assets/snowflake.png",
+        documentation: "https://docs.snowflake.com/en/"
+      },
+      {
+        id: 5,
+        name: "Azure",
+        path: "/assets/azure.png",
+        documentation: "https://docs.microsoft.com/en-us/azure/"
+      },
+      {
+        id: 6,
+        name: "REST API",
+        path: "/assets/restapi.png",
+        documentation: "https://restfulapi.net/"
+      },
+    ],
+    description : [
+      "Co-led feature development for Ecolab's Insitutional division solution penetration dashboard, enhancing data visualization for North American sales teams.",
+      "Engineered reusable Angular components to construct an Analytics dashboard for Ecolab's Institutional product and sales data, enhancing user experience and efficiency.",
+      "Created interactive charts (bar, doughnut, line) using Chart.js for intuitive data visualization and incorporated Mixpanel to track dashboard usage analytics.",
+      "Streamlined API endpoints with C# .NET Core, leveraging Azure Redis Caching and LINQ to minimize load times and optimize data retrieval efficiency.",
+      "Optimized Snowflake queries, achieving a 20% improvement in API performance and enabling seamless front-end integration.",
+      "Conducted End-to-End in-sprint BDD QA testing with Microsoft Playwright and SpecFlow for UI and API validation, ensuring high-quality deliverables.",
+      "Authored front-end unit tests using Karma, enhancing application reliability.",
+      "Facilitated daily scrum meetings and collaborated in an Agile environment through retrospectives and bi-weekly sprint deliveries, ensuring consistent project success.",
+      "Leveraged Git for version control and code collaboration, ensuring seamless integration and deployment of features.",
+      "Leveraged Azure Feature Manager, Redis Cache, and Application Insights to monitor and optimize application performance.",
+    ]
+  },
+  {
+    id: 2,
+    title: "Machine Learning Course Assistant",
+    location: "Rochester, NY",
+    company: "Rochester Institute of Technology",
+    duration: "August 2023-2024",
+    hovercolor: "#5271CA",
+    spotlight: "/assets/spotlight2.png",
+    technology : [
+      {
+        id: 1,
+        name: "Python",
+        path: "/assets/python.png",
+        documentation: "https://docs.python.org/3/"
+      },
+      {
+        id: 2,
+        name: "PyTorch",
+        path: "/assets/pytorch.svg",
+        documentation: "https://pytorch.org/docs/stable/index.html"
+      },
+      {
+        id: 3,
+        name: "TensorFlow",
+        path: "/assets/tensorflow.svg",
+        documentation: "https://www.tensorflow.org/guide"
+      },
+      {
+        id: 4,
+        name: "Linux",
+        path: "/assets/linux.png",
+        documentation: "https://www.linux.org/docs/"
+      },
+      {
+        id: 5,
+        name: "Git",
+        path: "/assets/git.png",
+        documentation: "https://git-scm.com/doc"
+      },
+      {
+        id: 6,
+        name: "Jupyter Notebook",
+        path: "/assets/jupyter.png",
+        documentation: "https://jupyter.org/documentation"
+      },
+    ],
+    description : [
+
+    ]
+  },
+]
 
 export const workTimelineItems = [
   {
