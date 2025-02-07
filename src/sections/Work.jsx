@@ -70,7 +70,12 @@ const Work = () => {
       <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
         <div className="flex flex-col projects-carousel h-full justify-between  items-center">
           <p className="text-white w-[90%] text-base text-center">
-            With 4 years of full-time experience and over 6 years of collective leadership experience across NGOs, University leader roles and professional work environments, I have developed a strong foundation in software development & leadership. I have worked on a variety of projects ranging from web development, mobile app development, and data analysis.
+            With 4 years of full-time experience and over 6 years of collective
+            leadership experience across NGOs, University leader roles and
+            professional work environments, I have developed a strong foundation
+            in software development & leadership. I have worked on a variety of
+            projects ranging from web development, mobile app development, and
+            data analysis.
           </p>
           <div className="project-container flex h-full justify-between  items-center">
             <div
@@ -112,19 +117,30 @@ const Work = () => {
                         }}
                         key={index}
                       >
-                        <div className="project-header-row flex items-center w-full justify-start gap-3 text-left text-white text-lg font-medium">
-                          
-                          <div className="project-title w-[90%]">
-                            <h4>{work.title}</h4>
-                          </div>
+                        <div className="work-header-row flex flex-col items-start text-left w-full ">
+                          {/* <div className="work-title"> */}
+                          <h4>{work.title}</h4>
+                          <h4>{work.company}</h4>
+                          <p className="text-[#afb0b6] text-sm font-normal">
+                            {work.location}
+                          </p>
+                          <p className="text-[#afb0b6] text-sm font-normal">
+                            {work.duration}
+                          </p>
+                          {/* </div> */}
                         </div>
 
                         <div className="project-desc flex flex-col flex-grow text-left text-[#afb0b6] text-sm font-normal w-full">
-                          <p>{work.company}</p>
-                          <br />
-                          <p>{work.location}</p>
-                          <p>{work.duration}</p>
-                          <p>{work.description}</p>
+                          <p className="text-base text-green-200">
+                            Responsibilities
+                          </p>
+                          <div className="work-responsibilities">
+                            <ol className="list-disc pl-5">
+                             {work.responsibilities.map((resp) => (
+                              <li>{resp}</li>
+                            ))}
+                            </ol>
+                             </div>
                         </div>
 
                         <div className="project-footer flex justify-between w-full">
@@ -144,21 +160,6 @@ const Work = () => {
                                 />
                               </a>
                             ))}
-                          </div>
-
-                          <div className="project-links flex gap-2">
-                            <a
-                              href={work.gitLink}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <img
-                                src="assets/github.svg"
-                                alt="github"
-                                className="w-8 h-8 transition-all rounded-xl duration-300 hover:shadow-[0_0_15px_5px_rgba(239,68,68,0.5)]"
-                                title="Check it out on GitHub"
-                              />
-                            </a>
                           </div>
                         </div>
                       </div>

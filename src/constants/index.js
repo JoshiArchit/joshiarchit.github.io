@@ -1,4 +1,6 @@
+import { Html } from "@react-three/drei";
 import { p, path } from "framer-motion/client";
+import React from "react";
 
 export const navLinks = [
   {
@@ -28,9 +30,184 @@ export const navLinks = [
   },
 ];
 
+const Technologies = {
+  Angular: {
+    name: "Angular",
+    path: "/assets/angular.png",
+    documentation: "https://angular.io/docs",
+  },
+  Azure: {
+    name: "Azure",
+    path: "/assets/azure.svg",
+    documentation: "https://docs.microsoft.com/en-us/azure/",
+  },
+  CSharp: {
+    name: "C# .NET",
+    path: "/assets/csharp.svg",
+    documentation: "https://docs.microsoft.com/en-us/dotnet/",
+  },
+  Codeigniter: {
+    name: "CodeIgniter",
+    path: "/assets/codeigniter.png",
+    documentation: "https://codeigniter.com/user_guide/",
+  },
+  Convex: {
+    name: "Convex",
+    path: "/assets/convex.svg",
+    documentation: "https://convex.dev/docs",
+  },
+  Css: {
+    name: "CSS",
+    path: "/assets/css.svg",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  Git: {
+    name: "Git",
+    path: "/assets/github.svg",
+    documentation: "https://git-scm.com/doc",
+  },
+  Html: {
+    name: "HTML",
+    path: "/assets/html.svg",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  IbmCloud: {
+    name: "IBM Cloud",
+    path: "/assets/cloud.svg",
+    documentation: "https://www.ibm.com/cloud",
+  },
+  JavaScript: {
+    name: "JavaScript",
+    path: "/assets/javascript.svg",
+    documentation: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  Jupyter: {
+    name: "Jupyter Notebook",
+    path: "/assets/jupyter.svg",
+    documentation: "https://jupyter.org/documentation",
+  },
+  Linux: {
+    name: "Linux",
+    path: "/assets/linux.png",
+    documentation: "https://www.linux.org/docs/",
+  },
+  MongoDb: {
+    name: "MongoDB",
+    path: "assets/mongo.png",
+    documentation: "https://docs.mongodb.com/",
+  },
+  Networking: {
+    name: "Networking",
+    path: "/assets/network.svg",
+    documentation:
+      "https://www.cisco.com/c/en/us/solutions/enterprise-networks/index.html",
+  },
+  Numpy: {
+    name: "Numpy",
+    path: "/assets/numpy.svg",
+    documentation: "https://numpy.org/doc/stable/",
+  },
+  Pandas: {
+    name: "Pandas",
+    path: "/assets/pandas.png",
+    documentation: "https://pandas.pydata.org/docs/",
+  },
+  Php: {
+    name: "PHP",
+    path: "/assets/php.svg",
+    documentation: "https://www.php.net/docs.php",
+  },
+  PostgreSql: {
+    name: "PostgreSQL",
+    path: "/assets/postgresql.png",
+    documentation: "https://www.postgresql.org/docs/",
+  },
+  Python: {
+    name: "Python",
+    path: "/assets/python.png",
+    documentation: "https://docs.python.org/3/",
+  },
+  Pygame: {
+    name: "PyGame",
+    path: "assets/game.png",
+    documentation: "https://www.pygame.org/docs/",
+  },
+  PyTorch: {
+    name: "PyTorch",
+    path: "/assets/pytorch.svg",
+    documentation: "https://pytorch.org/docs/stable/index.html",
+  },
+  React: {
+    name: "React.js",
+    path: "/assets/react.svg",
+    documentation: "https://react.dev/",
+  },
+  ResidenceAdvisor: {
+    name: "Residence Advisor",
+    path: "/assets/leader.svg",
+    documentation: "https://www.rit.edu/studentlife/resident-advisors",
+  },
+  RestApi: {
+    name: "REST API",
+    path: "/assets/api.png",
+    documentation: "https://restfulapi.net/",
+  },
+  Sap: {
+    name: "SAP",
+    path: "/assets/sap.png",
+    documentation: "https://help.sap.com/",
+  },
+  Security: {
+    name: "SAP Security",
+    path: "/assets/security.svg",
+    documentation: "https://www.sap.com/products/financial-management/grc.html",
+  },
+  Snowflake: {
+    name: "Snowflake",
+    path: "/assets/snowflake.png",
+    documentation: "https://docs.snowflake.com/en/",
+  },
+  Snort: {
+    name: "Snort",
+    path: "assets/tools.svg",
+    documentation: "https://www.snort.org/documents",
+  },
+  Sql: {
+    name: "SQL",
+    path: "/assets/system.svg",
+    documentation: "https://www.w3schools.com/sql/",
+  },
+  Suricata: {
+    name: "Suricata",
+    path: "/assets/tools.svg",
+    documentation: "https://suricata-ids.org/docs/",
+  },
+  SystemArchitecture: {
+    name: "System Architecture",
+    path: "/assets/system.svg",
+    documentation:
+      "https://learning.sap.com/learning-journeys/introducing-sap-abap-platform-fundamentals/discussing-the-sap-three-tier-client-server-architecture",
+  },
+  Tailwind: {
+    name: "TailwindCSS",
+    path: "assets/tailwindcss.png",
+    documentation: "https://tailwindcss.com/docs/installation/using-vite",
+  },
+  TensorFlow: {
+    name: "TensorFlow",
+    path: "/assets/tensorflow.svg",
+    documentation: "https://www.tensorflow.org/guide",
+  },
+  TypeScript: {
+    name: "TypeScript",
+    path: "/assets/typescript.png",
+    documentation: "https://www.typescriptlang.org/docs/",
+  },
+};
+
 export const myProjects = [
   {
-    projid:1,
+    projid: 1,
     title: "Reddit-Clone",
     desc: "Reddit is a great platform for sharing and discussing content. ",
     subdesc:
@@ -45,37 +222,18 @@ export const myProjects = [
     },
     spotlight: "/assets/spotlight1.png",
     stack: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-        documentation: "https://react.dev/"
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-        documentation: "https://tailwindcss.com/docs/installation/using-vite"
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-        documentation: "https://www.typescriptlang.org/docs/"
-      },
-      {
-        id: 4,
-        name: "Convex",
-        path: "/assets/convex.svg",
-        documentation: "https://convex.dev/docs"
-      },
+      Technologies.React,
+      Technologies.Tailwind,
+      Technologies.TypeScript,
+      Technologies.Convex,
     ],
   },
   {
-    projid:2,
+    projid: 2,
     title: "MyAnimeList Data Analysis",
     desc: "MyAnimeList is a popular website that allows users to track and rate anime and manga with a large amount of data handy on Kaggle, it makes a great candidate for data analysis !",
-    subdesc: "This project involved analyzing 80 million records from the MyAnimeList dataset in a team. We optimized schemas in PostgreSQL and MongoDB, analyzed user ratings and preferences with NumPy, and visualized the findings. The Apriori algorithm was applied to derive association rules with 70% confidence, and query optimization was improved by 20-30%.",
+    subdesc:
+      "This project involved analyzing 80 million records from the MyAnimeList dataset in a team. We optimized schemas in PostgreSQL and MongoDB, analyzed user ratings and preferences with NumPy, and visualized the findings. The Apriori algorithm was applied to derive association rules with 70% confidence, and query optimization was improved by 20-30%.",
     gitLink: "https://github.com/JoshiArchit/MyAnimeList-Data-Analysis",
     logo: "/assets/anime.svg",
     hovercolor: "#5271CA",
@@ -86,44 +244,21 @@ export const myProjects = [
     },
     spotlight: "/assets/spotlight2.png",
     stack: [
-      {
-        id: 1,
-        name: "Python",
-        path: "/assets/python.png",
-        documentation: "https://docs.python.org/3/"
-      },
-      {
-        id: 2,
-        name: "MongoDB",
-        path: "assets/mongo.png",
-        documentation: "https://docs.mongodb.com/"
-      },
-      {
-        id: 3,
-        name: "PostGreSQL",
-        path: "/assets/postgresql.png",
-        documentation: "https://www.postgresql.org/docs/"
-      },
-      {
-        id: 4,
-        name: "Numpy",
-        path: "/assets/numpy.svg",
-        documentation: "https://numpy.org/doc/stable/"
-      },
-      {
-        id: 5,
-        name: "Pandas",
-        path: "/assets/pandas.png",
-        documentation: "https://pandas.pydata.org/docs/"
-      }
+      Technologies.Python,
+      Technologies.MongoDb,
+      Technologies.PostgreSql,
+      Technologies.Numpy,
+      Technologies.Pandas,
     ],
   },
   {
-    projid:3,
+    projid: 3,
     title: "Intrusion Detection Systems using Python",
     desc: "Intrusion Detection Systems (IDS) are a crucial part of network security, as they help identify and prevent unauthorized access to computer networks.",
-    subdesc: "Understanding what an intrusion detection system is crucial before attempting to build one. Using Suricata and Snort as the industry standard IDS, this project involved a study of the various types of IDS, followed by the implementation of a machine learning-based IDS using Python. The model was trained on the NSL-KDD dataset and achieved an accuracy over 90%.",
-    gitLink: "https://github.com/JoshiArchit/Intrusion-Detection-Systems-in-Python",
+    subdesc:
+      "Understanding what an intrusion detection system is crucial before attempting to build one. Using Suricata and Snort as the industry standard IDS, this project involved a study of the various types of IDS, followed by the implementation of a machine learning-based IDS using Python. The model was trained on the NSL-KDD dataset and achieved an accuracy over 90%.",
+    gitLink:
+      "https://github.com/JoshiArchit/Intrusion-Detection-Systems-in-Python",
     logo: "/assets/intruder.svg",
     hovercolor: "#90DCA0",
     logoStyle: {
@@ -133,49 +268,20 @@ export const myProjects = [
     },
     spotlight: "/assets/spotlight3.png",
     stack: [
-      {
-        id: 1,
-        name: "Python",
-        path: "/assets/python.png",
-        documentation: "https://docs.python.org/3/"
-      },
-      {
-        id: 2,
-        name: "Snort",
-        path: "assets/tools.svg",
-        documentation: "https://www.snort.org/documents"
-      },
-      {
-        id: 3,
-        name: "Suricata",
-        path: "/assets/tools.svg",
-        documentation: "https://suricata-ids.org/docs/"
-      },
-      {
-        id: 4,
-        name: "TensorFlow",
-        path: "/assets/tensorflow.svg",
-        documentation: "https://www.tensorflow.org/guide"
-      },
-      {
-        id: 5,
-        name: "PyTorch",
-        path: "/assets/pytorch.svg",
-        documentation: "https://pytorch.org/docs/stable/index.html"
-      },
-      {
-        id: 6,
-        name: "Pandas",
-        path: "/assets/pandas.png",
-        documentation: "https://pandas.pydata.org/docs/"
-      }
+      Technologies.Python,
+      Technologies.Snort,
+      Technologies.Suricata,
+      Technologies.TensorFlow,
+      Technologies.PyTorch,
+      Technologies.Pandas,
     ],
   },
   {
-    projid:4,
+    projid: 4,
     title: "Space Invaders !",
     desc: "If you havent run into this game yet, you are missing out !",
-    subdesc: "To say I'm fascinated by how we can make code interact with the real world is an understatement. This project is a simple Space Invaders game built using Python and Pygame. It's a great way to learn about game development, object-oriented programming, and the Pygame library. Plus it's a lot of fun to play!",
+    subdesc:
+      "To say I'm fascinated by how we can make code interact with the real world is an understatement. This project is a simple Space Invaders game built using Python and Pygame. It's a great way to learn about game development, object-oriented programming, and the Pygame library. Plus it's a lot of fun to play!",
     gitLink: "https://github.com/JoshiArchit/Space-Invaders",
     logo: "/assets/space-invaders.png",
     hovercolor: "#AB51DE",
@@ -185,83 +291,37 @@ export const myProjects = [
       boxShadow: "0px 0px 60px 0px #AA3C304D",
     },
     spotlight: "/assets/spotlight4.png",
-    stack: [
-      {
-        id: 1,
-        name: "Python",
-        path: "/assets/python.png",
-        documentation: "https://docs.python.org/3/"
-      },
-      {
-        id: 2,
-        name: "PyGame",
-        path: "assets/game.png",
-        documentation: "https://www.pygame.org/docs/"
-      }
-    ],
-  }
-  
+    stack: [Technologies.Python, Technologies.Pygame],
+  },
 ];
 
 export const workExp = [
   {
     id: 1,
-    title: "Full Stack Developer Co-op",
+    title: "Full Stack Developer",
     location: "Saint Paul, MN",
     company: "Ecolab",
     duration: "Aug 2024 - Present",
     hovercolor: "#5271CA",
     spotlight: "/assets/spotlight2.png",
-    technology : [
-      {
-        id: 1,
-        name: "Angular",
-        path: "/assets/python.png",
-        documentation: "https://angular.io/docs"
-      },
-      {
-        id: 2,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-        documentation: "https://www.typescriptlang.org/docs/"
-      },
-      {
-        id: 3,
-        name: "C# .NET",
-        path: "/assets/dotnet.png",
-        documentation: "https://docs.microsoft.com/en-us/dotnet/"
-      },
-      {
-        id: 4,
-        name: "Snowflake",
-        path: "/assets/snowflake.png",
-        documentation: "https://docs.snowflake.com/en/"
-      },
-      {
-        id: 5,
-        name: "Azure",
-        path: "/assets/azure.png",
-        documentation: "https://docs.microsoft.com/en-us/azure/"
-      },
-      {
-        id: 6,
-        name: "REST API",
-        path: "/assets/restapi.png",
-        documentation: "https://restfulapi.net/"
-      },
+    technology: [
+      Technologies.Angular,
+      Technologies.TypeScript,
+      Technologies.CSharp,
+      Technologies.Snowflake,
+      Technologies.Azure,
+      Technologies.RestApi,
     ],
-    description : [
-      "Co-led feature development for Ecolab's Insitutional division solution penetration dashboard, enhancing data visualization for North American sales teams.",
-      "Engineered reusable Angular components to construct an Analytics dashboard for Ecolab's Institutional product and sales data, enhancing user experience and efficiency.",
-      "Created interactive charts (bar, doughnut, line) using Chart.js for intuitive data visualization and incorporated Mixpanel to track dashboard usage analytics.",
-      "Streamlined API endpoints with C# .NET Core, leveraging Azure Redis Caching and LINQ to minimize load times and optimize data retrieval efficiency.",
-      "Optimized Snowflake queries, achieving a 20% improvement in API performance and enabling seamless front-end integration.",
-      "Conducted End-to-End in-sprint BDD QA testing with Microsoft Playwright and SpecFlow for UI and API validation, ensuring high-quality deliverables.",
-      "Authored front-end unit tests using Karma, enhancing application reliability.",
-      "Facilitated daily scrum meetings and collaborated in an Agile environment through retrospectives and bi-weekly sprint deliveries, ensuring consistent project success.",
-      "Leveraged Git for version control and code collaboration, ensuring seamless integration and deployment of features.",
-      "Leveraged Azure Feature Manager, Redis Cache, and Application Insights to monitor and optimize application performance.",
-    ]
+    responsibilities: [
+      "Co-led feature development for Ecolab’s Institutional division solution penetration dashboard, improving data visualization for North American sales teams.",
+      "Engineered reusable Angular components and interactive charts with Chart.js to enhance the Analytics dashboard.",
+      "Optimized API endpoints using C# .NET Core, Azure Redis Caching, and LINQ for faster data retrieval.",
+      "Improved Snowflake query performance by 20%, enabling seamless front-end integration.",
+      "Conducted BDD QA testing with Microsoft Playwright and SpecFlow, ensuring high-quality deliverables.",
+      "Authored unit tests using Karma to enhance application reliability.",
+      "Collaborated in Agile sprints, contributing to retrospectives and sprint deliveries.",
+      "Utilized Git, Azure Feature Manager, Redis Cache, and Application Insights for performance monitoring and optimization.",
+    ],
   },
   {
     id: 2,
@@ -269,56 +329,99 @@ export const workExp = [
     location: "Rochester, NY",
     company: "Rochester Institute of Technology",
     duration: "August 2023-2024",
-    hovercolor: "#5271CA",
-    spotlight: "/assets/spotlight2.png",
-    technology : [
-      {
-        id: 1,
-        name: "Python",
-        path: "/assets/python.png",
-        documentation: "https://docs.python.org/3/"
-      },
-      {
-        id: 2,
-        name: "PyTorch",
-        path: "/assets/pytorch.svg",
-        documentation: "https://pytorch.org/docs/stable/index.html"
-      },
-      {
-        id: 3,
-        name: "TensorFlow",
-        path: "/assets/tensorflow.svg",
-        documentation: "https://www.tensorflow.org/guide"
-      },
-      {
-        id: 4,
-        name: "Linux",
-        path: "/assets/linux.png",
-        documentation: "https://www.linux.org/docs/"
-      },
-      {
-        id: 5,
-        name: "Git",
-        path: "/assets/git.png",
-        documentation: "https://git-scm.com/doc"
-      },
-      {
-        id: 6,
-        name: "Jupyter Notebook",
-        path: "/assets/jupyter.png",
-        documentation: "https://jupyter.org/documentation"
-      },
+    hovercolor: "#e37e2b",
+    spotlight: "/assets/spotlight1.png",
+    technology: [
+      Technologies.Python,
+      Technologies.PyTorch,
+      Technologies.TensorFlow,
+      Technologies.Linux,
+      Technologies.Git,
+      Technologies.Jupyter,
     ],
-    description : [
 
-    ]
+    responsibilities: [
+      "Supervising and conducting recitation sessions for graduate and undergraduate Introduction to Machine Learning courses.",
+      "Grading assignments, programming homework, and projects for over 70 students.",
+      "Mentoring and assisting students.",
+      "Working collaboratively with the professor to cultivate a positive learning environment.",
+    ],
   },
-]
+  {
+    id: 3,
+    title: "System Architect",
+    location: "Pune, India",
+    company: "IBM",
+    duration: "August 2019 - July 2022",
+    hovercolor: "#90DCA0",
+    spotlight: "/assets/spotlight3.png",
+    technology: [
+      Technologies.Sap,
+      Technologies.IbmCloud,
+      Technologies.SystemArchitecture,
+      Technologies.Python,
+      Technologies.Networking,
+      Technologies.Security,
+    ],
+    responsibilities: [
+      "Recipienct of the IBM Service Excellence Award for outstanding performance towards delivering client value.",
+      "Managed 9 SAP landscapes, including ECC, ERP and Solution Manager, ensuring smooth operation and optimal performance.",
+      "Enhanced system security by 80% through a robust SAP Gateway security framework and Access Control Lists.",
+      "Implemented Change and Transport Management System for change migration from sandbox to production with 0 downtime.",
+      "Implemented Blueprism automation, reducing errors by 90% and saving 8 hours of manual effort using Python scripts.",
+      "Led Gateway security management and SAP system upgrade projects, coordinating with clients and Kyndryl cloud teams to ensure successful execution and optimal performance. ",
+    ],
+  },
+  {
+    id: 4,
+    title: "Graduate Residence Advisor (RA) & Service Desk Assistant",
+    location: "Rochester, NY",
+    company: "Rochester Institute of Technology",
+    duration: "August 2022 - August 2024",
+    hovercolor: "#e37e2b",
+    spotlight: "/assets/spotlight1.png",
+    technology: [Technologies.ResidenceAdvisor],
+    responsibilities: [
+      "One of the 12 Univeristy-wide Graduate Residence Advisors",
+      "Recipient of the 2023-2024 RIT Residence Life Team Player and Community Builder Award.",
+      "Provided mentorship and support to 400+ on campus apartment residents, fostering a positive and inclusive community.",
+      "Organized and led 10+ community-building events, promoting student engagement and well-being.",
+      "Served as front-line support to the residents, supporting them in celebration and in times of crisis and conflict.",
+      "Managed and resolved resident conflicts and emergencies, ensuring a supportive and inclusive community.",
+      "Collaborated with auxiliary services: Public Safety, Housing, Student Government, and Case Management to ensure a safe housing and college experience.",
+      "As a Service Desk Assistant, provided administrative support to Residence Life staff, ensuring efficient operations and smooth workflow.",
+    ],
+  },
+  {
+    id: 5,
+    title: "Web Developer Intern",
+    location: "Pune, India",
+    company: "SRV Media Pvt. Ltd.",
+    duration: "May 2017 - July 2017",
+    hovercolor: "#AB51DE",
+    spotlight: "/assets/spotlight5.png",
+    technology: [
+      Technologies.Php,
+      Technologies.Codeigniter,
+      Technologies.Html,
+      Technologies.Css,
+      Technologies.JavaScript,
+      Technologies.Sql,
+      Technologies.Python,
+    ],
+    responsibilities: [
+      "Developed the frontend for a content aggregation website prototype using HTML, CSS, JavaScript, and the CodeIgniter Framework following the standard software development cycle and Agile methodology.",
+      "Implemented SEO best practices to improve website ranking and visibility.",
+      "Designed and implemented the backend architecture for the prototype using PHP, SQL, Bootstrap, and the CodeIgniter Framework.",
+      "Collaborated with the development and UI/UX team to ensure seamless integration of frontend and backend functionalities.",
+    ],
+  },
+];
 
 export const workTimelineItems = [
   {
     id: 1,
-    title: "Full Stack Developer Co-op",
+    title: "Full Stack Developer",
     location: "Saint Paul, MN",
     company: "Ecolab",
     buttonText: "Details",
