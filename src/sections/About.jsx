@@ -3,7 +3,7 @@ import Timeline from "../components/Timeline";
 
 const About = () => {
   return (
-    <section className=" my-10">
+    <section id="about" className="about-section my-10">
       <h3 className="head-text flex justify-center mb-[2%]">About Me</h3>
       <div className="grid xl:grid-cols-4 xl:grid-rows-3 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">

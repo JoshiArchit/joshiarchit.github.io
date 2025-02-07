@@ -1,12 +1,4 @@
-import { PerspectiveCamera } from "@react-three/drei";
-import React, { Suspense } from "react";
-import HackerRoom from "../components/HackerRoom";
-import CanvasLoader from "../components/Loading";
-import { Canvas } from "@react-three/fiber";
-import { Leva, useControls } from "leva";
-import { useMediaQuery } from "react-responsive";
-import { calculateSizes } from "../constants/index.js";
-import Controller from "../components/Controller";
+import React from "react";
 import Timeline from "../components/Timeline.jsx";
 
 export const Hero = () => {
@@ -39,13 +31,14 @@ export const Hero = () => {
             />
           </div>
 
-          <div className="bio-section flex flex-col justify-center items-center text-center">
+          <div className="bio-section flex flex-col justify-center items-center text-justify">
             <p className=" font-semibold text-white sm:grid-headtext">
               Hi! I'm Archit
             </p>
             <p className="text-xl text-[#afb0b6]  sm:grid-subtext">
               Grad Student, Software Engineer, AI and Machine learning
-              enthusiast, Gamer and the occasional artist. <br />
+              enthusiast, gamer (guess my favourite) and the occasional artist.{" "}
+              <br />
               Looking to leverage my software engineering skills and critical
               thinking to tackle intricate problems and helping find innovative
               solutions to shape the technological landscape around the globe.{" "}
@@ -108,12 +101,37 @@ export const Hero = () => {
 
         <div className="timeline-container grid-container col-span-1 sm:col-span-2 h-full w-full flex items-center justify-center relative">
           {/* Timeline items */}
-          <div className="w-full">
-            <p className="text-center m-0 text-lg font-semibold head-text">
-              Work Experience
-            </p>
+          <section className="w-full flex flex-col items-center relative">
+            {/* Arrow positioned above text */}
+            <div className="section-header flex">
+              <p className="text-center m-0 text-lg font-semibold head-text mb-[4%]">
+                Work Experience
+              </p>
+              <img
+                src="/assets/location-arrow.svg"
+                alt="arrow-up"
+                className="w-4 h-4 ml-1 mb-1 animate-bounce rounded-full hover:shadow-[0_0_10px_4px] hover:shadow-gray-500 transition-shadow duration-300"
+                title="Scroll to Work Experience"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector("#work");
+
+                  if (target) {
+                    const navbarHeight =
+                      document.querySelector("header").offsetHeight; // Get navbar height
+                    const targetPosition =
+                      target.getBoundingClientRect().top + window.scrollY; // Get target's position
+                    window.scrollTo({
+                      top: targetPosition - navbarHeight - 20, // Adjust for navbar height & extra spacing
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+              />
+            </div>
+
             <Timeline defaultColor={"bg-green-500"} timelineType={"work"} />
-          </div>
+          </section>
         </div>
       </section>
     </section>
