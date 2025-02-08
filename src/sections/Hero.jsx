@@ -36,16 +36,16 @@ export const Hero = () => {
               Hi! I'm Archit
             </p>
             <p className="text-xl text-[#afb0b6]  sm:grid-subtext">
-              Grad Student, Software Engineer, AI and Machine learning
-              enthusiast, gamer (guess my favourite) and the occasional artist.{" "}
-              <br />
-              Looking to leverage my software engineering skills and critical
-              thinking to tackle intricate problems and helping find innovative
-              solutions to shape the technological landscape around the globe.{" "}
-              <br />
-              <br />I am looking for challenging opportunities that will help me
-              learn and grow as a professional. Please check out my some of my
-              work, my resume and get in touch with me!
+              Grad student, Software Engineer, and AI/ML enthusiast with a
+              passion for turning complex problems into innovative solutions.
+              When I'm not coding, you can find me gaming (any guesses on my
+              favorite?). 
+              <br/>
+              <br/>
+              I'm on the lookout for challenging full-time
+              opportunities that blend Software Engineering, Data Science, and
+              Machine Learning. Take a look at my work, grab my resume, and
+              let's connect—I'd love to chat!
             </p>
           </div>
 
