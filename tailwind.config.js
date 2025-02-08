@@ -2,6 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      'sm': '576px',
+      'md': '1000px',
+      'lg': '1440px',
+      'xl': '1920px',
+    },
     extend: {
       fontFamily: {
         generalsans: ['General Sans', 'sans-serif'],

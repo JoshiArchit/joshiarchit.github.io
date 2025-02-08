@@ -22,7 +22,7 @@ export const Hero = () => {
       </div>
 
       <section className="grid grid-cols-1 sm:grid-cols-4 w-full gap-3 mt-10">
-        <div className="bio-container grid-container col-span-1 sm:col-span-2">
+        <div className="bio-container grid-container col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2">
           <div className="image-container flex justify-center items-center w-full h-full">
             <img
               src="/assets/sprite.png"
@@ -32,16 +32,16 @@ export const Hero = () => {
           </div>
 
           <div className="bio-section flex flex-col justify-center items-center text-justify">
-            <p className=" font-semibold text-white sm:grid-headtext">
+            <p className=" font-semibold text-white text-sm md:text-base lg:grid-headtext">
               Hi! I'm Archit
             </p>
-            <p className="text-xl text-[#afb0b6]  sm:grid-subtext">
+            <p className="text-[#afb0b6] text-sm sm:text-sm md:text-sm lg:grid-subtext">
               Grad Student, Software Engineer, AI and Machine learning
-              enthusiast, gamer (guess my favourite) and the occasional artist.{" "}
+              enthusiast, gamer (guess my favourite) and the occasional artist.
               <br />
               Looking to leverage my software engineering skills and critical
               thinking to tackle intricate problems and helping find innovative
-              solutions to shape the technological landscape around the globe.{" "}
+              solutions to shape the technological landscape around the globe.
               <br />
               <br />I am looking for challenging opportunities that will help me
               learn and grow as a professional. Please check out my some of my
@@ -49,7 +49,7 @@ export const Hero = () => {
             </p>
           </div>
 
-          <div className="grid-container socials-section flex justify-center items-center">
+          {/* <div className="grid-container socials-section flex justify-center items-center">
             <div className="socials-header head-text text-center m-0 font-semibold">
               Reach me at
             </div>
@@ -96,10 +96,10 @@ export const Hero = () => {
                 />
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="timeline-container grid-container col-span-1 sm:col-span-2 h-full w-full flex items-center justify-center relative">
+        <div className="timeline-container grid-container h-full w-full flex items-center justify-center relative col-span-1 sm:col-span-3 md:col-span-3 lg:col-span-2">
           {/* Timeline items */}
           <section className="w-full flex flex-col items-center relative">
             {/* Arrow positioned above text */}

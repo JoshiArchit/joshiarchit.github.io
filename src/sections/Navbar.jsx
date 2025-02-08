@@ -1,7 +1,7 @@
 import React from "react";
 import { navLinks } from "../constants/index.js";
 
-const NavItems = () => {
+const NavItems = ({ closeMenu }) => {
   return (
     <ul className="nav-ul">
       {navLinks.map(({ id, href, name }) => (
@@ -23,6 +23,9 @@ const NavItems = () => {
                   behavior: "smooth",
                 });
               }
+
+              // Close menu after clicking a link
+              closeMenu();
             }}
           >
             {name}
@@ -37,6 +40,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
+  const closeMenu = () => setIsOpen(false); // Function to close the menu
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
@@ -61,14 +65,15 @@ const Navbar = () => {
           </button>
 
           <nav className="sm:flex hidden">
-            <NavItems />
+            <NavItems closeMenu={() => {}} /> {/* No need to close in desktop mode */}
           </nav>
         </div>
       </div>
 
+      {/* Mobile Sidebar */}
       <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
         <nav className="p-5">
-          <NavItems />
+          <NavItems closeMenu={closeMenu} />
         </nav>
       </div>
     </header>

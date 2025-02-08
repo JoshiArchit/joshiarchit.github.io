@@ -3,19 +3,19 @@ import Timeline from "../components/Timeline";
 
 const About = () => {
   return (
-    <section id="about" className="about-section my-10">
-      <h3 className="head-text flex justify-center mb-[2%]">About Me</h3>
-      <div className="grid xl:grid-cols-4 xl:grid-rows-3 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <div className="col-span-1 xl:row-span-3">
+    <section id="about" className="about-section my-5">
+      <h3 className="head-text flex justify-center mb-5">About Me</h3>
+      <div className="grid row-span-3 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-5 h-full">
+        <div className="col-span-4 row-span-1 md:row-span-3 md:col-span-2">
           <div className="grid-container">
-            <p className="text-lg font-semibold text-white sm:head-text flex justify-center">
+            <p className="text-base font-semibold text-white sm:head-text flex justify-center">
               Why Code?
             </p>
-            <div>
+            <div className="grid-sub-container sm:flex sm:flex-grow sm:flex-col">
               <img
                 src="assets/programmer.png"
                 alt="grid3"
-                className="w-full sm:h-[276px] h-fit object-contain"
+                className="w-fit mr-4 sm:w-full sm:h-[276px] float-left h-[100px] object-contain"
               />
 
               <p className="text-sm text-[#afb0b6]">
@@ -29,16 +29,16 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-3">
+        <div className="col-span-4  row-span-1 md:row-span-3 md:col-span-2">
           <div className="grid-container">
-            <p className="text-lg font-semibold text-white sm:head-text flex justify-center">
+            <p className="text-base font-semibold text-white sm:head-text flex justify-center">
               Primary Tech Stack
             </p>
-            <div>
+            <div className="grid-sub-container sm:flex sm:flex-grow sm:flex-col">
               <img
                 src="assets/tech_stack.png"
                 alt="grid2"
-                className="w-full sm:h-[276px] h-fit object-contain"
+                className="w-fit mr-4 sm:w-full sm:h-[276px] float-left h-[100px] object-contain"
               />
               <p className="text-sm text-[#afb0b6]">
                 I work with Java, JavaScript, Python, and React, while
@@ -51,12 +51,17 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-span-2 xl:row-span-3">
+
+
+        <div className="col-span-4 row-span-1 md:row-span-3">
           <div className="grid-container">
             <div className="text-lg font-semibold text-white sm:head-text z-10 flex justify-center">
               Education
             </div>
+            <div className="timeline-container grid-sub-container flex flex-grow flex-col">
+
             <Timeline defaultColor={"bg-green-500"} timelineType={"school"} />
+            </div>
           </div>
         </div>
       </div>
