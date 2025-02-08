@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className="text-white">Website developed using React, Tailwind and my have lingering hints of ThreeJS because it started as a 3D demo. All icons attributed in the README.md file in the github respository.</div>
-  )
-}
+    <div className="text-white flex flex-col mb-[2%]">
+      <div className="horizontal-line h-[2px] bg-black-300 mb-[1%]"></div>
+      <div className="footer-text text-center text-sm">
+        Website developed using React, Tailwind and may have lingering hints of
+        ThreeJS because it started as a 3D project with guidance from -
+        <a
+          href="https://www.youtube.com/watch?v=kt0FrkQgw8w&t=6505s&pp=ygUNM2pzIHBvcnRmb2xpbw%3D%3D"
+          target="_blank"
+          rel="noreferrer"
+          className="underline text-blue-400 hover:text-blue-300 ml-1"
+        >
+          JavaScript Mastery
+        </a>
+        .
+        <br />
+        All icons attributed in the README.md file in the GitHub repository.
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
