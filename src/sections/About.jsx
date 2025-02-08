@@ -11,7 +11,7 @@ const About = () => {
             <p className="text-lg font-semibold text-white sm:head-text flex justify-center">
               Why Code?
             </p>
-            <div>
+            <div className="grid-sub-container flex flex-grow flex-col">
               <img
                 src="assets/programmer.png"
                 alt="grid3"
@@ -34,7 +34,7 @@ const About = () => {
             <p className="text-lg font-semibold text-white sm:head-text flex justify-center">
               Primary Tech Stack
             </p>
-            <div>
+            <div className=" grid-sub-container flex flex-grow flex-col">
               <img
                 src="assets/tech_stack.png"
                 alt="grid2"
@@ -56,7 +56,10 @@ const About = () => {
             <div className="text-lg font-semibold text-white sm:head-text z-10 flex justify-center">
               Education
             </div>
+            <div className="timeline-container grid-sub-container flex flex-grow flex-col">
+
             <Timeline defaultColor={"bg-green-500"} timelineType={"school"} />
+            </div>
           </div>
         </div>
       </div>

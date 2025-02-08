@@ -50,27 +50,55 @@ export default function Timeline({ defaultColor, timelineType }) {
                 </div>
               </div>
               <div className="card-details flex flex-col justify-start text-left p-[2%] flex-1 ml-5 border pd-2% opacity-100 border-green-200 rounded-lg">
-                <div className="title-card  text-white text-lg font-medium text-wrap">
-                  {element.title}
-                </div>
-                <div className="text-gray-200 font-medium text-lg">
-                  {isWork ? element.company : element.school}
-                </div>
-                <div className="text-gray-400 text-sm font-medium">
-                  {element.location}
-                </div>
-                <div className="text-gray-400 text-sm">{element.date}</div>
 
-                <div className="text-sm">
-                  <span className="text-green-200">
-                    {isWork ? "Tech Stack - " : "Related Course work - "}
-                  </span>
-                  <br/>
-                  <span className="text-gray-400">
-                    {element.description.map((item, index) =>
-                      index ? `,  ${item}` : item
-                    )}
-                  </span>
+                <div className="card-top flex flex-grow flex-col justify-between mb-[2%]">
+
+                  <div className="card-header flex flex-grow flex-row justify-between">
+
+                    <div className="card-header-left">
+                      <div className="title-card  text-white text-base font-medium text-wrap">
+                        {element.title}
+                      </div>
+                      <div className="text-gray-200 font-medium text-base">
+                        {isWork ? element.company : element.school}
+                      </div>
+                    </div>
+
+                    <div className="card-header-right justify-center text-end">
+                      <div className="text-gray-400 text-sm font-medium">
+                        {element.location}
+                      </div>
+                      <div className="text-gray-400 text-sm">
+                        {element.date}
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  {!isWork && (
+                    <div className="card-certifications text-sm">
+                      <span className="text-gray-400">
+                        With {element.certification}
+                      </span>
+                    </div>
+                  )}
+
+                </div>
+
+                <div className="card-bottom">
+
+                  <div className="card-stack text-sm">
+                    <span className="text-green-200">
+                      {isWork ? "Tech Stack - " : "Related Course work - "}
+                    </span>
+                    <br />
+                    <span className="text-gray-400">
+                      {element.description.map((item, index) =>
+                        index ? `,  ${item}` : item
+                      )}
+                    </span>
+                  </div>
+
                 </div>
               </div>
             </div>

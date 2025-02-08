@@ -444,7 +444,7 @@ export const workTimelineItems = [
     location: "Rochester, NY",
     company: "Rochester Institute of Technology",
     buttonText: "Details",
-    date: "August 2023-2024",
+    date: "Jan 2024 - Aug 2024",
     icon: "work",
     color: "red",
     description: [
@@ -462,7 +462,7 @@ export const workTimelineItems = [
     location: "Pune, India",
     company: "IBM",
     buttonText: "Details",
-    date: "August 2019 - July 2022",
+    date: "Aug 2019 - July 2022",
     icon: "work",
     color: "purple",
     description: [
@@ -502,7 +502,8 @@ export const educationTimelineItems = [
     title: "Master of Science in Computer Science",
     location: "Rochester, NY",
     school: "Rochester Institute of Technology",
-    date: "August 2022 - Present",
+    date: "Aug 2022 - May 2025",
+    certification: "Advanced Certificate in Artificial Intelligence and Data Science",
     icon: "school",
     color: "orange",
     description: [
@@ -519,7 +520,8 @@ export const educationTimelineItems = [
     title: "Bachelor of Technology in Information Technology",
     location: "Pune, India",
     school: "Symbiosis Institute of Technology",
-    date: "August 2018 - May 2022",
+    date: "Aug 2018 - May 2022",
+    certification: "Diploma in Business Management",
     icon: "/assets/school.svg",
     color: "blue",
     description: [
