@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="text-white flex flex-col mb-[2%]">
-      <div className="horizontal-line h-[2px] bg-black-300 mb-[1%]"></div>
-      <div className="footer-text text-center text-sm">
+    <div className="text-white text-xs sm:text-base flex flex-col mb-[5%]">
+      <div className="horizontal-line h-[2px] bg-black-300 mb-[2%]"></div>
+      <div className="footer-text text-center">
         Website developed using React, Tailwind and may have lingering hints of
         ThreeJS because it started as a 3D project with guidance from -
         <a

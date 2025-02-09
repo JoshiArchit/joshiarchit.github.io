@@ -31,6 +31,13 @@ export default function Timeline({ defaultColor, timelineType }) {
       {/* for large screen timeline fashion*/}
       <div className="timeline-large-screen hidden sm:flex h-full w-full flex-col items-center justify-center overflow-auto">
         {data.map((element, index) => {
+          const colors = [
+            "bg-red-500",
+            "bg-blue-500",
+            "bg-yellow-500",
+            "bg-purple-500",
+            "bg-orange-500",
+          ];
           const color = `bg-${element.color}-500` || defaultColor;
 
           return (
