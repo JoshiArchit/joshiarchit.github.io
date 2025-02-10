@@ -55,7 +55,7 @@ const Projects = () => {
   }, [startIndex]);
 
   return (
-    <section id="projects">
+    <section id="projects" className="mb-[2%]">
       <h3 className="head-text text-center mb-[2%]">My Selected Work</h3>
 
       <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
@@ -199,6 +199,12 @@ const Projects = () => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex sm:hidden">
+        <div className="grid-container text-white ">
+          Under construction for Mobile experience. Please view the desktop site!
         </div>
       </div>
     </section>

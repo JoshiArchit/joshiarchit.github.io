@@ -49,54 +49,13 @@ export const Hero = () => {
             </p>
           </div>
 
-          {/* <div className="grid-container socials-section flex justify-center items-center">
+          <a href="#contact">
+          <div className="grid-container socials-section flex justify-center items-center">
             <div className="socials-header head-text text-center m-0 font-semibold">
-              Reach me at
+              Get in Touch!
             </div>
-
-            <div className="socials-icons flex flex-row items-center gap-5">
-              <a
-                href="https://www.linkedin.com/in/archit2904/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src="/assets/linkedin.svg"
-                  alt="linkedin"
-                  className="w-8 h-8 rounded-lg"
-                  title="Connect with me on LinkedIn!"
-                />
-              </a>
-              <a
-                href="https://www.github.com/JoshiArchit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src="/assets/github.svg"
-                  alt="github"
-                  className="w-8 h-8 rounded-lg"
-                  title="Git on my GitHub!"
-                />
-              </a>
-              <a href="mailto:joshi.archit.2904@gmail.com">
-                <img
-                  src="/assets/email.svg"
-                  alt="email"
-                  className="w-8 h-8 rounded-lg"
-                  title="Email Me!"
-                />
-              </a>
-              <a href="/assets/resume.pdf" download>
-                <img
-                  src="/assets/resume.svg"
-                  alt="Download Resume"
-                  className="w-12 h-12 cursor-pointer"
-                  title="Download my Resume!"
-                />
-              </a>
-            </div>
-          </div> */}
+          </div>
+          </a>
         </div>
 
         <div className="timeline-container grid-container h-full w-full flex items-center justify-center relative col-span-1 sm:col-span-3 md:col-span-3 lg:col-span-2">
