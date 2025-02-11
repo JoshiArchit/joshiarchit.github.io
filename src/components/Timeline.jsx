@@ -126,9 +126,10 @@ export default function Timeline({ defaultColor, timelineType }) {
               boxShadow: `0 0 10px 4px ${data[currentIndex].hovercolor}`, // Permanent glow effect
             }}
           >
-            <p className="text-white text-base text-center">
+            <p className="text-white text-base text-center mb-2">
               {data[currentIndex].title}
             </p>
+            <div className="horizontal-line w-full border-b-2 border-black-300 mb-2"></div>
             <p className="text-white text-base text-center font-light">
               {isWork ? data[currentIndex].company : data[currentIndex].school}
             </p>

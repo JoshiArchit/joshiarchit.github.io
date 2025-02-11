@@ -69,7 +69,7 @@ const workExp = [
       Technologies.Security,
     ],
     responsibilities: [
-      "Recipienct of the IBM Service Excellence Award for outstanding performance towards delivering client value.",
+      "Recipient of the IBM Service Excellence Award for outstanding performance towards delivering client value.",
       "Managed 9 SAP landscapes, including ECC, ERP and Solution Manager, ensuring smooth operation and optimal performance.",
       "Enhanced system security by 80% through a robust SAP Gateway security framework and Access Control Lists.",
       "Implemented Change and Transport Management System for change migration from sandbox to production with 0 downtime.",

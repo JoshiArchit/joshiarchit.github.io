@@ -10,24 +10,42 @@ const WorkModal = ({ workExp, closeModal }) => {
       >
         {/* Modal Content */}
         <div
-          className="modal-content bg-gray-400 rounded-lg p-6 w-11/12 md:w-1/3"
+          className="modal-content flex flex-col bg-black-200 rounded-lg p-6 w-11/12"
           onClick={(e) => e.stopPropagation()} // Prevent click on modal content from closing the modal
         >
-          {/* Close Button */}
-          <button
-            onClick={closeModal}
-            className="relative top-2 right-2 text-white text-2xl"
-          >
-            &times;
-          </button>
-
           {/* Modal Content */}
-          <div>
-            <h2 className="text-xl font-semibold">{workExp.title}</h2>
-            <div className="mt-4">
-              <p>{workExp.shortDescription}</p>
-              {/* Add more detailed information about the work item as needed */}
+          <div className="modal-header">
+            <div className="modal-header-top flex flex-row w-full gap-4">
+              <div className="modal-header flex flex-grow flex-col w-[95%]">
+                <h2 className="text-xl font-semibold">{workExp.title}</h2>
+                <p>{workExp.company}</p>
+              </div>
+
+              <div className="close-button flex justify-end w-[5%]">
+                <button onClick={closeModal} className="text-2xl">
+                  &times;
+                </button>
+              </div>
             </div>
+            <div className="modal-header-bottom">
+              <p className="text-sm text-gray-500">
+                {workExp.location}
+                <br />
+                {workExp.duration}
+              </p>
+            </div>
+          </div>
+
+          <div className="horizontal-line w-full border-b-2 border-black-300 my-2"></div>
+
+          <div className="modal-body">
+            <p className="text-sm text-green-200">Responsibilities</p>
+            <br/>
+            <ul className="text-sm list-disc pl-5">
+              {workExp.responsibilities.map((resp, index) => (
+                <li key={index}>{resp}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

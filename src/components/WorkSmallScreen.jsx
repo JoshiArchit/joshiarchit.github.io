@@ -46,16 +46,17 @@ const WorkSmallScreen = () => {
         }}
         onClick={() => openModal(currentWorkIndex)}
       >
-        <div className="top-section w-full text-sm gap-2 mb-2">
+        <div className="top-section w-full gap-2 mb-2">
           <div className="work-title justify-start items-center w-full">
             {workExp[currentWorkIndex].title}
             <br />
-            <p className="text-gray-500">{workExp[currentWorkIndex].company}</p>
+            
           </div>
         </div>
         <div className="horizontal-line w-full border-b-2 border-black-300 mb-2"></div>
-        <div className="bottom-section flex flex-col gap-2 justify-between items-start">
-          <p className="text-sm">
+        <div className="bottom-section flex flex-col justify-between items-start">
+        <p className="text-white">{workExp[currentWorkIndex].company}</p>
+          <p className="text-sm text-gray-500">
             {workExp[currentWorkIndex].location}
             <br />
             {workExp[currentWorkIndex].duration}
