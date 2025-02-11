@@ -1,5 +1,6 @@
 import React from "react";
 import Timeline from "../components/Timeline.jsx";
+import WorkSmallScreen from "../components/WorkSmallScreen.jsx";
 
 export const Hero = () => {
   return (
@@ -69,7 +70,7 @@ export const Hero = () => {
               <img
                 src="/assets/location-arrow.svg"
                 alt="arrow-up"
-                className="w-4 h-4 ml-1 mb-1 animate-bounce rounded-full hover:shadow-[0_0_10px_4px] hover:shadow-gray-500 transition-shadow duration-300"
+                className="hidden sm:block w-4 h-4 ml-1 mb-1 animate-bounce rounded-full hover:shadow-[0_0_10px_4px] hover:shadow-gray-500 transition-shadow duration-300"
                 title="Scroll to Work Experience"
                 onClick={(e) => {
                   e.preventDefault();
@@ -88,8 +89,14 @@ export const Hero = () => {
                 }}
               />
             </div>
-
+            
+            <div className="timeline hidden sm:flex">
             <Timeline defaultColor={"bg-green-500"} timelineType={"work"} />
+            </div>
+
+            <div className="small-screen-work flex sm:hidden">
+              <WorkSmallScreen />
+              </div>
           </section>
         </div>
       </section>

@@ -55,7 +55,7 @@ const Work = () => {
   }, [startIndex]);
 
   return (
-    <section id="work" className="mb-[2%]">
+    <section id="work" className="mb-[2%] hidden sm:block">
       <h3 className="head-text text-center mb-[2%]">Work Experience</h3>
 
       <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
@@ -194,11 +194,6 @@ const Work = () => {
         </div>
       </div>
 
-      <div className="flex sm:hidden">
-        <div className="grid-container text-white ">
-          Under construction for Mobile experience. Please view the desktop site!
-        </div>
-      </div>
     </section>
   );
 };

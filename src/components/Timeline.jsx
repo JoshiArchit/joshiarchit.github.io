@@ -121,9 +121,10 @@ export default function Timeline({ defaultColor, timelineType }) {
         <div className="card-section-top flex flex-grow justify-between items-center w-full rounded-lg">
           {/* Card */}
           <div
-            className={
-              "timeline-card flex flex-grow flex-col rounded-lg shadow-md p-1 border-2 border-gray-500"
-            }
+            className="timeline-card flex flex-grow flex-col rounded-lg shadow-md p-1 border-2 border-black-300"
+            style={{
+              boxShadow: `0 0 10px 4px ${data[currentIndex].hovercolor}`, // Permanent glow effect
+            }}
           >
             <p className="text-white text-base text-center">
               {data[currentIndex].title}

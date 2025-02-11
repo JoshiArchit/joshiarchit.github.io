@@ -35,6 +35,7 @@ export const workTimelineItems = [
     buttonText: "Details",
     date: "Aug 2024 - Present",
     icon: "work",
+    hovercolor: "#5271CA",
     color: "green",
     description: [
       "Angular",
@@ -54,6 +55,7 @@ export const workTimelineItems = [
     buttonText: "Details",
     date: "Jan 2024 - Aug 2024",
     icon: "work",
+    hovercolor: "#e37e2b",
     color: "red",
     description: [
       "Python",
@@ -73,6 +75,7 @@ export const workTimelineItems = [
     date: "Aug 2019 - July 2022",
     icon: "work",
     color: "purple",
+    hovercolor: "#90DCA0",
     description: [
       "Python",
       "SAP",
@@ -91,6 +94,7 @@ export const workTimelineItems = [
     date: "May 2017 - July 2017",
     icon: "work",
     color: "orange",
+    hovercolor: "#AB51DE",
     description: [
       "HTML",
       "CSS",
@@ -115,6 +119,7 @@ export const educationTimelineItems = [
       "Advanced Certificate in Artificial Intelligence and Data Science",
     icon: "school",
     color: "orange",
+    hovercolor: "#e37e2b",
     description: [
       "Artificial Intelligence",
       "Machine Learning",
@@ -132,6 +137,7 @@ export const educationTimelineItems = [
     date: "Aug 2018 - May 2022",
     certification: "Diploma in Business Management",
     icon: "/assets/school.svg",
+    hovercolor: "#5271CA",
     color: "blue",
     description: [
       "Data Structures",

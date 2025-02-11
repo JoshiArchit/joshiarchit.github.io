@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import myProjects from "../constants/projects.js";
 
-const ResponsiveProject = () => {
+const ProjectsSmallScreen = () => {
   // For mobile view
   const [currentIndex, setCurrentIndex] = useState(0);
   const data = myProjects;
@@ -119,4 +119,4 @@ const ResponsiveProject = () => {
   );
 };
 
-export default ResponsiveProject;
+export default ProjectsSmallScreen;

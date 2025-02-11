@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import myProjects from "../constants/projects.js";
-import ResponsiveProject from "../components/ResponsiveProject.jsx";
+import ProjectsSmallScreen from "../components/ProjectsSmallScreen.jsx";
 
 const Projects = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -205,7 +205,7 @@ const Projects = () => {
       </div>
 
       <div className="projects-small-screen flex sm:hidden">
-        <ResponsiveProject />
+        <ProjectsSmallScreen />
       </div>
     </section>
   );
