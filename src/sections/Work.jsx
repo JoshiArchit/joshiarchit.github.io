@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { workExp } from "../constants/index.js";
+import workExp from "../constants/work";
 
 const Work = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -129,8 +129,8 @@ const Work = () => {
                             </p>
                             <div className="work-responsibilities">
                               <ol className="list-disc pl-5">
-                                {work.responsibilities.map((resp) => (
-                                  <li>{resp}</li>
+                                {work.responsibilities.map((resp, index) => (
+                                  <li key={index}>{resp}</li>
                                 ))}
                               </ol>
                             </div>
@@ -140,12 +140,12 @@ const Work = () => {
                             <div className="project-stack flex gap-2">
                               {work.technology.map((tech) => (
                                 <a
+                                  key={tech.id}
                                   href={tech.documentation}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
                                   <img
-                                    key={tech.id}
                                     src={tech.path}
                                     alt={tech.name}
                                     title={tech.name}

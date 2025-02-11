@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { myProjects } from "../constants/index.js";
+import myProjects from "../constants/projects.js";
+import ResponsiveProject from "../components/ResponsiveProject.jsx";
 
 const Projects = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [cardHeight, setCardHeight] = useState(0); // State to hold the consistent height
+  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
+
   const projectsPerPage = 3;
   const totalProjects = myProjects.length;
-  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
 
   const handleNavigation = (dir) => {
     setDirection(dir === "right" ? 1 : -1);
@@ -34,7 +37,6 @@ const Projects = () => {
     });
   };
 
-  const [cardHeight, setCardHeight] = useState(0); // State to hold the consistent height
   const projectCardsRef = useRef([]); // To hold references to project cards
 
   useEffect(() => {
@@ -58,7 +60,7 @@ const Projects = () => {
     <section id="projects" className="mb-[2%]">
       <h3 className="head-text text-center mb-[2%]">My Selected Work</h3>
 
-      <div className="hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
+      <div className="projects-md-screen hidden sm:flex  projects-section h-full  flex-col mb-[2%]">
         <div className="flex flex-col projects-carousel h-full justify-between  items-center">
           <p className="text-white w-[90%] text-base text-center">
             As a visual learner, I believe the best way to learn new technology
@@ -133,12 +135,12 @@ const Projects = () => {
                             <div className="project-stack flex gap-2">
                               {project.stack.map((tech) => (
                                 <a
+                                  key={tech.id}
                                   href={tech.documentation}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
                                   <img
-                                    key={tech.id}
                                     src={tech.path}
                                     alt={tech.name}
                                     title={tech.name}
@@ -202,10 +204,8 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="flex sm:hidden">
-        <div className="grid-container text-white ">
-          Under construction for Mobile experience. Please view the desktop site!
-        </div>
+      <div className="projects-small-screen flex sm:hidden">
+        <ResponsiveProject />
       </div>
     </section>
   );
