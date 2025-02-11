@@ -2,12 +2,14 @@ import React from "react";
 import { navLinks } from "../constants/index.js";
 
 const NavItems = ({ closeMenu }) => {
+  const isSmallScreen = window.innerWidth <= 640;
+
   return (
     <ul className="nav-ul">
       {navLinks.map(({ id, href, name }) => (
         <li key={id} className="nav-li">
           <a
-            href={href}
+            href={isSmallScreen && name === "Work" ? "#worksmall" : href}
             className="nav-li_a"
             onClick={(e) => {
               e.preventDefault();

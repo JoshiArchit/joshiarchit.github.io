@@ -94,7 +94,7 @@ export const Hero = () => {
             <Timeline defaultColor={"bg-green-500"} timelineType={"work"} />
             </div>
 
-            <div className="small-screen-work flex sm:hidden">
+            <div id="worksmall" className="small-screen-work flex sm:hidden">
               <WorkSmallScreen />
               </div>
           </section>

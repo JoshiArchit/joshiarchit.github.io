@@ -28,7 +28,7 @@ const WorkSmallScreen = () => {
   };
 
   return (
-    <section id="work" className=" text-white">
+    <section className="text-white">
       <div className="carousal-message mb-3">
         <p className="text-sm text-white text-center">
           With 4 years of experience, I bring a curious attitude with and a
