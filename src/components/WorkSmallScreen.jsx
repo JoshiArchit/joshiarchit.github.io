@@ -9,10 +9,14 @@ const WorkSmallScreen = () => {
   const openModal = (index) => {
     setCurrentWorkIndex(index);
     setIsModalOpen(true);
+    // disable scrolling when modal is open
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    // enable scrolling when modal is closed
+    document.body.style.overflow = "auto";
   };
 
   const nextWork = () => {

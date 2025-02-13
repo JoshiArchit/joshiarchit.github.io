@@ -36,7 +36,7 @@ export const Hero = () => {
             <p className=" font-semibold text-white text-sm md:text-base lg:grid-headtext">
               Hi! I'm Archit
             </p>
-            <p className="text-[#afb0b6] text-sm sm:text-sm md:text-sm lg:grid-subtext">
+            <p className="text-[#afb0b6] text-sm sm:text-xs md:text-sm lg:text-base lg:grid-subtext">
               Grad Student, Software Engineer, AI and Machine learning
               enthusiast, gamer (guess my favourite) and the occasional artist.
               <br />
