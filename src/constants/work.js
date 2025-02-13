@@ -79,26 +79,6 @@ const workExp = [
   },
   {
     id: 4,
-    title: "Graduate Residence Advisor (RA) & Service Desk Assistant",
-    location: "Rochester, NY",
-    company: "Rochester Institute of Technology",
-    duration: "August 2022 - August 2024",
-    hovercolor: "#e37e2b",
-    spotlight: "/assets/spotlight1.png",
-    technology: [Technologies.ResidenceAdvisor],
-    responsibilities: [
-      "One of the 12 Univeristy-wide Graduate Residence Advisors",
-      "Recipient of the 2023-2024 RIT Residence Life Team Player and Community Builder Award.",
-      "Provided mentorship and support to 400+ on campus apartment residents, fostering a positive and inclusive community.",
-      "Organized and led 10+ community-building events, promoting student engagement and well-being.",
-      "Served as front-line support to the residents, supporting them in celebration and in times of crisis and conflict.",
-      "Managed and resolved resident conflicts and emergencies, ensuring a supportive and inclusive community.",
-      "Collaborated with auxiliary services: Public Safety, Housing, Student Government, and Case Management to ensure a safe housing and college experience.",
-      "As a Service Desk Assistant, provided administrative support to Residence Life staff, ensuring efficient operations and smooth workflow.",
-    ],
-  },
-  {
-    id: 5,
     title: "Web Developer Intern",
     location: "Pune, India",
     company: "SRV Media Pvt. Ltd.",
@@ -121,6 +101,26 @@ const workExp = [
       "Collaborated with the development and UI/UX team to ensure seamless integration of frontend and backend functionalities.",
     ],
   },
+  {
+    id: 5,
+    title: "Graduate Residence Advisor (RA) & Service Desk Assistant",
+    location: "Rochester, NY",
+    company: "Rochester Institute of Technology",
+    duration: "August 2022 - August 2024",
+    hovercolor: "#e37e2b",
+    spotlight: "/assets/spotlight1.png",
+    technology: [Technologies.ResidenceAdvisor],
+    responsibilities: [
+      "One of the 12 Univeristy-wide Graduate Residence Advisors",
+      "Recipient of the 2023-2024 RIT Residence Life Team Player and Community Builder Award.",
+      "Provided mentorship and support to 400+ on campus apartment residents, fostering a positive and inclusive community.",
+      "Organized and led 10+ community-building events, promoting student engagement and well-being.",
+      "Served as front-line support to the residents, supporting them in celebration and in times of crisis and conflict.",
+      "Managed and resolved resident conflicts and emergencies, ensuring a supportive and inclusive community.",
+      "Collaborated with auxiliary services: Public Safety, Housing, Student Government, and Case Management to ensure a safe housing and college experience.",
+      "As a Service Desk Assistant, provided administrative support to Residence Life staff, ensuring efficient operations and smooth workflow.",
+    ],
+  }
 ];
 
 export default workExp;
