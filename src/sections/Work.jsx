@@ -15,18 +15,18 @@ const Work = () => {
       let newIndex;
 
       if (dir === "right") {
-        newIndex = prevIndex + projectsPerPage; // Move right by projectsPerPage
+        newIndex = prevIndex + projectsPerPage;
 
-        // Wrap around if exceeding total projects
         if (newIndex >= totalProjects) {
-          newIndex = 0; // Reset to start
+          newIndex = 0; // Loop back to the first page
         }
       } else {
-        newIndex = prevIndex - projectsPerPage; // Move left by projectsPerPage
+        newIndex = prevIndex - projectsPerPage;
 
-        // Wrap around if going below 0
         if (newIndex < 0) {
-          newIndex = Math.max(totalProjects - projectsPerPage, 0);
+          newIndex =
+            totalProjects -
+            (totalProjects % projectsPerPage || projectsPerPage);
         }
       }
 
@@ -193,7 +193,6 @@ const Work = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };

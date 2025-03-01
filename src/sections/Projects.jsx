@@ -29,7 +29,9 @@ const Projects = () => {
 
         // Wrap around if going below 0
         if (newIndex < 0) {
-          newIndex = Math.max(totalProjects - projectsPerPage, 0);
+          newIndex =
+            totalProjects -
+            (totalProjects % projectsPerPage || projectsPerPage);
         }
       }
 
