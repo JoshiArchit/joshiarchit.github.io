@@ -1,6 +1,5 @@
 <section
-  id="home"
-  class="flex h-full w-full grow items-center justify-center px-8"
+  class="relative flex min-h-[calc(100vh-10vh)] w-full flex-1 items-center justify-center px-24"
 >
   <!-- orb layer -->
   <div class="absolute inset-0 flex items-center justify-center">
@@ -23,14 +22,56 @@
   </div>
 
   <!-- text layer -->
-  <div class="slide-in-left relative z-10 text-9xl">
-    <div class="flex flex-col text-center">
-      <p class="text-7xl">Hi, I'm <span class="font-semibold">Archit</span></p>
-      <p class="text-3xl font-light">
-        Software Developer by craft,<br />problem-solver and builder at heart.
+  <div class="slide-in-left relative z-10 flex flex-col items-center gap-4">
+    <div class="flex items-center">
+      <img src="sprite.png" class="h-64 w-64 rounded-full object-cover" />
+      <div class="flex flex-col gap-2">
+        <p class="text-7xl">
+          Hi, I'm <span class="font-semibold">Archit</span>
+          <span class="wave">👋🏽</span>
+        </p>
+        <p class="text-4xl font-light">
+          Software Developer by craft,<br />problem-solver and builder at heart.
+        </p>
+      </div>
+    </div>
+    <div class="flex w-2/3 flex-col gap-4 text-center text-xl font-light">
+      <p>
+        <span class="font-extrabold">Full Stack Engineer</span> who builds end to
+        end — from sleek interfaces to robust backends — and explores the edges of
+        Machine Learning. Always building on the side, always sharpening my skills,
+        and open to new challenges.
       </p>
+      <div class="flex w-full items-center justify-between text-base">
+        <div class="flex gap-2">
+          <a
+            href="#about"
+            class="flex items-center gap-2 rounded-md border border-slate-600 bg-black px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            ><i class="fa-regular fa-circle-user"></i>My Experience</a
+          >
+          <a
+            href="#projects"
+            class="flex items-center gap-2 rounded-md border border-slate-600 bg-black px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            ><i class="fa-regular fa-file-code"></i>View Projects</a
+          >
+        </div>
+
+        <div id="hero-socials" class="flex gap-2 text-base">
+          <p>Find me:</p>
+          <a
+            href="https://www.github.com/JoshiArchit"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fa-brands fa-github text-xl"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/archit2904"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fa-brands fa-linkedin text-xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="p-4 pt-2"></div>
 </section>
