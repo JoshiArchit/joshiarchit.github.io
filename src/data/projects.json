@@ -1,0 +1,58 @@
+[
+  {
+    "title": "MyAnimeList Data Analysis",
+    "context": "MyAnimeList tracks anime and manga for millions of users — and with 80M+ records on Kaggle, it's a great candidate for serious data analysis.",
+    "description": "A three-phase project comparing PostgreSQL and MongoDB on the MyAnimeList dataset — covering data modeling, query optimization, indexing, and itemset mining using the Apriori algorithm.",
+    "github": "https://github.com/JoshiArchit/MyAnimeList-Data-Analysis",
+    "stack": "Python, PostgreSQL, MongoDB, NumPy, Pandas"
+  },
+  {
+    "title": "Reddit Clone",
+    "context": "Reddit is one of the most visited platforms on the web — a community-driven space for sharing, discussing, and voting on content across thousands of topics.",
+    "description": "A full-stack Reddit clone built with React and Tailwind on the frontend, powered by Convex for real-time backend and data sync — featuring posts, votes, and community interactions.",
+    "github": "https://github.com/JoshiArchit/Reddit-Clone",
+    "stack": "React, Tailwind CSS, TypeScript, Convex"
+  },
+  {
+    "title": "Intrusion Detection Systems using Python",
+    "context": "Intrusion Detection Systems are a critical line of defense in network security — identifying and flagging unauthorized access before it becomes a breach.",
+    "description": "Built a machine learning-based IDS trained on the KDD Cup dataset, leveraging Python and ML libraries to classify network traffic and detect anomalous patterns.",
+    "github": "https://github.com/JoshiArchit/Intrusion-Detection-Systems-in-Python",
+    "stack": "Python, Snort, Suricata, TensorFlow, PyTorch, Pandas"
+  },
+  {
+    "title": "Space Invaders",
+    "context": "Space Invaders — a classic arcade game that's as addictive as it gets. If you haven't played it yet, you're missing out.",
+    "description": "A fully playable Space Invaders clone built with Python and Pygame, featuring a complete game loop, progressive level design, and a score system.",
+    "github": "https://github.com/JoshiArchit/Space-Invaders",
+    "stack": "Python, PyGame"
+  },
+  {
+    "title": "Analyzing Web-Composability using OpenAPI and Swagger Descriptions",
+    "context": "OpenAPI specifications power the modern web — but how composable are they really? This project attempts to replicate the findings of a 2022 IEEE paper studying data model compatibility across thousands of real-world API descriptions.",
+    "description": "A research replication study analyzing over 71,000 OpenAPI descriptions from the APIGuru dataset. Built a pipeline in Python to clean, extract, and compare API parameters — performing endpoint matching, data-type matching, and property-name matching to validate the original paper's findings on web composability.",
+    "github": "https://github.com/JoshiArchit/Analyzing-Web-Composability-using-Open-API-and-Swagger-descriptions",
+    "stack": "Python, MongoDB"
+  },
+  {
+    "title": "Comparison of Graph Query Languages",
+    "context": "Graph databases are reshaping how we model and query highly connected data — and the query languages that power them are just as important as the databases themselves.",
+    "description": "A literature review comparing Cypher, Gremlin, and SPARQL across syntax, semantics, optimization strategies, and use cases — examining what sets graph databases apart from relational systems and where each query language shines.",
+    "github": "https://github.com/JoshiArchit/Comparison-of-Graph-Query-Languages-A-Survey",
+    "stack": "Survey Paper"
+  },
+  {
+    "title": "NYC Vehicle Collision Analysis",
+    "context": "NYC sees thousands of vehicle collisions every year — and NYC Open Data makes that history publicly available. With over a million records on hand, it's a rich dataset for uncovering patterns in urban traffic safety.",
+    "description": "A data engineering and analysis project focused on NYC motor vehicle collision data between summer 2019 and 2020. Built an ETL pipeline in Python to extract, clean, and load data into PostgreSQL — then queried it to uncover weekly and hourly accident trends, year-over-year comparisons, and the 100 most accident-prone consecutive days, visualized using heat maps.",
+    "github": "https://github.com/JoshiArchit/NYC-Vehicle-Collision-Data-Analysis",
+    "stack": ["Python", "PostgreSQL", "Pandas", "Folium", "scikit-learn"]
+  },
+  {
+    "title": "Studying Degradation in Graph HyperNetworks",
+    "context": "Graph HyperNetworks predict neural network weights directly from computational graphs — eliminating the need for expensive optimization processes like SGD. Understanding how they degrade under limited data is key to making them practical in low-resource scenarios.",
+    "description": "A research study analyzing how GHN-3 performance degrades across varying training data sizes using CIFAR-10 and CIFAR-100. Evaluated 80 standard PyTorch architectures and found that model architecture — not data volume — is the dominant factor in performance, with CNN-heavy residual models consistently outperforming others. Also demonstrated GHN-3's transfer learning potential across datasets.",
+    "github": "https://github.com/JoshiArchit/GHNGraphs/",
+    "stack": ["Python", "PyTorch", "Matplotlib", "scikit-learn"]
+  }
+]

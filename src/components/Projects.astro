@@ -1,0 +1,56 @@
+---
+import projects from "../data/projects.json";
+---
+
+<section
+  id="projects"
+  class="relative flex min-h-[calc(100vh-10vh)] flex-1 flex-col items-center justify-center gap-8 px-24"
+>
+  <div class="mt-8 flex flex-col items-center justify-center gap-2">
+    <h2 class="text-4xl font-semibold">Selected Work</h2>
+    <p class="w-2/3 text-center">
+      I learn by building. Here are some projects that reflect how I think —
+      check out the code and stack behind each one.
+    </p>
+  </div>
+
+  <div class="grid w-full grid-cols-3 gap-4">
+    {
+      projects.map((project) => (
+        <div class="flex w-full flex-col justify-between gap-4 rounded-lg border border-slate-700 px-8 py-6 hover:bg-slate-900">
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <h4 class="flex h-full text-2xl font-light">{project.title}</h4>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex h-full"
+              >
+                <i class="fa-brands fa-github text-2xl transition-colors hover:text-slate-400" />
+              </a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <p class="text-sm text-slate-400">{project.context}</p>
+              <p class="text-sm">{project.description}</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <hr class="border-slate-700" />
+
+            <div class="flex flex-col gap-1">
+              <span class="flex items-center gap-2 text-sm font-semibold tracking-widest text-slate-500 uppercase">
+                <i class="fa-solid fa-cubes text-red-400" />
+                Tech Stack
+              </span>
+              <span class="text-sm">{project.stack}</span>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="w-full border border-slate-900"></div>
+</section>
