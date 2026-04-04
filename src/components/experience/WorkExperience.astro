@@ -1,0 +1,41 @@
+---
+import jobs from "../../data/jobs.json";
+---
+
+<section id="work" class="flex w-4/7 flex-col gap-8">
+  <h2 class="text-4xl font-semibold">Experience</h2>
+  <div
+    id="work"
+    class="relative flex flex-col gap-8 border-l border-slate-700 pl-8"
+  >
+    {
+      jobs.map((job) => (
+        <div class="relative flex flex-col gap-2">
+          <div class={`absolute -left-10 h-4 w-4 rounded-full ${job.color}`} />
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold">{job.title}</h3>
+            <span class="text-sm text-slate-400">
+              {job.start} – {job.end}
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-400">
+            <i class="fa-solid fa-building" />
+            <span>{job.company}</span>
+            <span>·</span>
+            <span>{job.location}</span>
+          </div>
+          <ul class="flex flex-col gap-1 text-sm text-slate-300">
+            {job.bullets.map((bullet) => (
+              <li class="flex gap-2">
+                <i
+                  class={`fa-solid fa-chevron-right mt-1 ${job.bulletColor}`}
+                />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

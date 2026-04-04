@@ -1,0 +1,17 @@
+---
+import About from "./experience/About.astro";
+import Education from "./experience/Education.astro";
+import WorkExperience from "./experience/WorkExperience.astro";
+---
+
+<section
+  id="profile"
+  class="relative flex min-h-[calc(100vh-10vh)] w-full flex-1 scroll-mt-[10vh] flex-col items-center justify-center px-24"
+>
+  <About />
+  <div class="flex gap-16 py-16">
+    <WorkExperience />
+    <Education />
+  </div>
+</section>
+<hr class="mx-24 mb-8 border border-slate-900" />

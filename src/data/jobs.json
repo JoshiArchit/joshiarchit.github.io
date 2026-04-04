@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Full Stack Software Engineer",
+    "company": "Ecolab",
+    "location": "St. Paul, MN",
+    "start": "Aug 2024",
+    "end": "Present",
+    "color": "bg-blue-400",
+    "bulletColor": "text-blue-400",
+    "bullets": [
+      "Built Azure-hosted analytics dashboards with Angular and TypeScript, increasing user adoption by 20%",
+      "Designed scalable REST APIs in C# and .NET Core with Redis caching, maintaining sub-3-second latency under high concurrency",
+      "Modernized data access by migrating raw SQL to Entity Framework Core, improving maintainability and concurrent scalability",
+      "Led migration from SCSS to Tailwind CSS, reducing bundle size by 30% and improving UI consistency",
+      "Achieved 98% automated test coverage with NUnit, Karma, Jasmine and Playwright, reducing regression defects by 99%"
+    ]
+  },
+  {
+    "title": "Machine Learning Course Assistant",
+    "company": "Rochester Institute of Technology",
+    "location": "Rochester, NY",
+    "start": "Jan 2024",
+    "end": "Aug 2024",
+    "color": "bg-purple-400",
+    "bulletColor": "text-purple-400",
+    "bullets": [
+      "Led recitations covering supervised/unsupervised learning, model evaluation, and feature engineering for 70+ students",
+      "Evaluated and debugged ML pipelines using NumPy, Pandas, scikit-learn, and PyTorch",
+      "Mentored students on core ML algorithms including regression, decision trees, and neural networks"
+    ]
+  },
+  {
+    "title": "SAP System Architect",
+    "company": "IBM",
+    "location": "Pune, India",
+    "start": "Aug 2019",
+    "end": "July 2022",
+    "color": "bg-amber-400",
+    "bulletColor": "text-amber-400",
+    "bullets": [
+      "Managed 9 enterprise SAP ERP systems ensuring 99.9% uptime across dev, QA, and production environments",
+      "Achieved 98% SLA compliance through incident triage and resolution via ServiceNow",
+      "Automated SAP monitoring workflows using Blue Prism RPA, reducing manual errors by 90%",
+      "Designed custom ACLs to strengthen SAP Gateway security, increasing protection coverage by 80%"
+    ]
+  }
+]

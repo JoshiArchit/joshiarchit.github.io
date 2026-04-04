@@ -1,0 +1,80 @@
+---
+import degrees from "../../data/degrees.json";
+---
+
+<section id="education_awards" class="flex w-3/7 flex-col gap-8">
+  <section id="education" class="flex flex-col gap-8">
+    <h2 class="text-4xl font-semibold">Education</h2>
+    <div class="relative flex flex-col gap-8 border-l border-slate-700 pl-8">
+      {
+        degrees.map((degree) => (
+          <div class="relative flex flex-col gap-2">
+            <div
+              class={`absolute -left-10 h-4 w-4 rounded-full ${degree.background}`}
+            />
+
+            <div class="flex items-center justify-between">
+              <div class="flex-col">
+                <h3 class="text-xl font-semibold">{degree.degree}</h3>
+                <h4>{degree.major}</h4>
+              </div>
+              <span class="flex h-full text-sm text-slate-400">
+                {degree.start} – {degree.end}
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2 text-slate-400">
+              <i class="fa-solid fa-graduation-cap" />
+              <span>{degree.university}</span>
+              <span>·</span>
+              <span>{degree.location}</span>
+            </div>
+
+            <div>
+              <ul>
+                {degree.bullets.map((bullet) => (
+                  <li>
+                    <i
+                      class={`fa-solid fa-chevron-right mt-1 ${degree.bulletColor}`}
+                    />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="awards" class="flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Awards & Certifications</h2>
+
+    <div class="flex flex-col gap-2">
+      <span
+        class="flex -translate-x-1.5 items-center gap-2 text-sm font-semibold tracking-widest text-slate-500 uppercase"
+      >
+        <i class="fa-solid fa-trophy text-amber-400"></i>Awards
+      </span>
+      <ul class="flex flex-col gap-1 border-l border-slate-700 pl-4 text-sm">
+        <li>IBM Service Excellence Award — Q1 2021</li>
+        <li>RIT Residence Life Community Builder — 2024</li>
+        <li>RIT Residence Life Team Player — 2024</li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <span
+        class="flex -translate-x-1.5 items-center gap-2 text-sm font-semibold tracking-widest text-slate-500 uppercase"
+      >
+        <i class="fa-solid fa-certificate text-blue-400"></i>Certifications
+      </span>
+      <ul class="flex flex-col gap-1 border-l border-slate-700 pl-4 text-sm">
+        <li>AWS Certified Cloud Practitioner</li>
+        <li>Microsoft Certified: Azure Data Fundamentals</li>
+        <li>Microsoft Certified: Azure Fundamentals</li>
+      </ul>
+    </div>
+  </section>
+</section>
