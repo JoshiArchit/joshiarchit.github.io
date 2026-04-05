@@ -1,43 +1,57 @@
-# Astro Starter Kit: Minimal
+# Archit Joshi — Portfolio v2
 
-```sh
-npm create astro@latest -- --template minimal
+Personal portfolio site built with Astro and Tailwind CSS.
+Previous version : [Archit Joshi Portfolio - NextJS](https://github.com/JoshiArchit/joshiarchit.github.io_legacy)
+
+## Stack
+
+- [Astro](https://astro.build) — static site framework
+- [Tailwind CSS v4](https://tailwindcss.com) — utility-first styling
+- [Font Awesome](https://fontawesome.com) — icons
+
+## Sections
+
+- **Hero** — intro with animated color orbs, links to experience, projects, and resume download
+- **Profile** — about me, work experience, and education
+- **Projects** — project cards driven by `src/data/projects.json`
+- **Contact** — email CTA with GitHub and LinkedIn links
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
+│   ├── sprite.png          # Profile photo
+│   └── resume.pdf          # Downloadable resume
 ├── src/
+│   ├── components/
+│   │   ├── experience/     # About, WorkExperience, Education
+│   │   ├── Hero.astro
+│   │   ├── Profile.astro
+│   │   ├── Projects.astro
+│   │   ├── Contact.astro
+│   │   ├── Header.astro
+│   │   └── Footer.astro
+│   ├── data/
+│   │   ├── projects.json   # Project cards data
+│   │   ├── jobs.json       # Work experience data
+│   │   └── degrees.json    # Education data
+│   ├── layout/
+│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Command           | Action                               |
+| :---------------- | :----------------------------------- |
+| `npm install`     | Install dependencies                 |
+| `npm run dev`     | Start dev server at `localhost:4321` |
+| `npm run build`   | Build production site to `./dist/`   |
+| `npm run preview` | Preview production build locally     |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Requirements
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Node.js >= 22.12.0
