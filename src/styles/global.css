@@ -2,8 +2,10 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
 * {
-  @apply box-border scroll-pt-[10vh] scroll-smooth;
+  @apply box-border scroll-pt-[10vh] scroll-smooth transition-all ease-in-out;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes slideInLeft {
   from {

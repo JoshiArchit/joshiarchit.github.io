@@ -46,13 +46,13 @@
     "context": "NYC sees thousands of vehicle collisions every year — and NYC Open Data makes that history publicly available. With over a million records on hand, it's a rich dataset for uncovering patterns in urban traffic safety.",
     "description": "A data engineering and analysis project focused on NYC motor vehicle collision data between summer 2019 and 2020. Built an ETL pipeline in Python to extract, clean, and load data into PostgreSQL — then queried it to uncover weekly and hourly accident trends, year-over-year comparisons, and the 100 most accident-prone consecutive days, visualized using heat maps.",
     "github": "https://github.com/JoshiArchit/NYC-Vehicle-Collision-Data-Analysis",
-    "stack": ["Python", "PostgreSQL", "Pandas", "Folium", "scikit-learn"]
+    "stack": "Python, PostgreSQL, Pandas, Folium, scikit-learn"
   },
   {
     "title": "Studying Degradation in Graph HyperNetworks",
     "context": "Graph HyperNetworks predict neural network weights directly from computational graphs — eliminating the need for expensive optimization processes like SGD. Understanding how they degrade under limited data is key to making them practical in low-resource scenarios.",
     "description": "A research study analyzing how GHN-3 performance degrades across varying training data sizes using CIFAR-10 and CIFAR-100. Evaluated 80 standard PyTorch architectures and found that model architecture — not data volume — is the dominant factor in performance, with CNN-heavy residual models consistently outperforming others. Also demonstrated GHN-3's transfer learning potential across datasets.",
     "github": "https://github.com/JoshiArchit/GHNGraphs/",
-    "stack": ["Python", "PyTorch", "Matplotlib", "scikit-learn"]
+    "stack": "Python, PyTorch, Matplotlib, scikit-learn"
   }
 ]

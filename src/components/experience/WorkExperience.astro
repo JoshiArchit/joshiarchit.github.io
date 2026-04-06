@@ -1,5 +1,14 @@
 ---
 import jobs from "../../data/jobs.json";
+
+const colorMap: Record<string, string> = {
+  blue: "bg-blue-600 dark:bg-blue-400",
+  purple: "bg-purple-600 dark:bg-purple-400",
+  amber: "bg-amber-600 dark:bg-amber-400",
+  blueBullet: "text-blue-600 dark:text-blue-400",
+  purpleBullet: "text-purple-600 dark:text-purple-400",
+  amberBullet: "text-amber-600 dark:text-amber-400",
+};
 ---
 
 <section id="work" class="flex w-4/7 flex-col gap-8">
@@ -11,24 +20,26 @@ import jobs from "../../data/jobs.json";
     {
       jobs.map((job) => (
         <div class="relative flex flex-col gap-2">
-          <div class={`absolute -left-10 h-4 w-4 rounded-full ${job.color}`} />
+          <div
+            class={`absolute -left-10 h-4 w-4 rounded-full ${colorMap[job.color]}`}
+          />
           <div class="flex items-center justify-between">
             <h3 class="text-xl font-semibold">{job.title}</h3>
-            <span class="text-sm text-slate-400">
+            <span class="text-sm text-slate-700 dark:text-slate-400">
               {job.start} – {job.end}
             </span>
           </div>
-          <div class="flex items-center gap-2 text-slate-400">
+          <div class="flex items-center gap-2 text-slate-700 dark:text-slate-400">
             <i class="fa-solid fa-building" />
             <span>{job.company}</span>
             <span>·</span>
             <span>{job.location}</span>
           </div>
-          <ul class="flex flex-col gap-1 text-sm text-slate-300">
+          <ul class="flex flex-col gap-1 text-sm text-slate-700 dark:text-slate-300">
             {job.bullets.map((bullet) => (
               <li class="flex gap-2">
                 <i
-                  class={`fa-solid fa-chevron-right mt-1 ${job.bulletColor}`}
+                  class={`fa-solid fa-chevron-right mt-1 ${colorMap[job.bulletColor]}`}
                 />
                 {bullet}
               </li>

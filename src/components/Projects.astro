@@ -14,10 +14,10 @@ import projects from "../data/projects.json";
     </p>
   </div>
 
-  <div class="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
     {
       projects.map((project) => (
-        <div class="flex w-full flex-col justify-between gap-4 rounded-lg border border-slate-700 px-8 py-6 hover:bg-slate-900">
+        <div class="flex w-full flex-col justify-between gap-4 rounded-lg border border-slate-700 px-8 py-6 hover:bg-slate-200 dark:hover:bg-slate-900">
           <div class="flex flex-col gap-2">
             <div class="flex items-center justify-between gap-2">
               <h4 class="flex h-full text-2xl font-light">{project.title}</h4>
@@ -31,7 +31,9 @@ import projects from "../data/projects.json";
               </a>
             </div>
             <div class="flex flex-col gap-2">
-              <p class="text-sm text-slate-400">{project.context}</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400">
+                {project.context}
+              </p>
               <p class="text-sm">{project.description}</p>
             </div>
           </div>
@@ -40,7 +42,7 @@ import projects from "../data/projects.json";
             <hr class="border-slate-700" />
 
             <div class="flex flex-col gap-1">
-              <span class="flex items-center gap-2 text-sm font-semibold tracking-widest text-slate-500 uppercase">
+              <span class="flex items-center gap-2 text-sm font-semibold tracking-widest text-slate-800 uppercase dark:text-slate-500">
                 <i class="fa-solid fa-cubes text-red-400" />
                 Tech Stack
               </span>

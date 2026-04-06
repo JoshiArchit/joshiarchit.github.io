@@ -6,14 +6,14 @@
     "end": "2025",
     "university": "Rochester Institute of Technology",
     "location": "Rochester, NY",
-    "background": "bg-orange-400",
+    "background": "orange",
     "bullets": [
       "Advanced Certificate in Artificial Intelligence",
       "Advanced Certificate in Data Science",
       "Graduate Residence Advisor, Residence Life",
       "Service Desk Assistant, Residence Life"
     ],
-    "bulletColor": "text-orange-400"
+    "bulletColor": "orangeBullet"
   },
   {
     "degree": "Bachelor of Technology",
@@ -22,8 +22,8 @@
     "end": "2019",
     "university": "Symbiosis Institute of Technology",
     "location": "Pune, India",
-    "background": "bg-blue-400",
+    "background": "blue",
     "bullets": ["Concurrent Diploma in Business Management"],
-    "bulletColor": "text-blue-400"
+    "bulletColor": "blueBullet"
   }
 ]
