@@ -5,8 +5,8 @@
     "location": "St. Paul, MN",
     "start": "Aug 2024",
     "end": "Present",
-    "color": "bg-blue-400",
-    "bulletColor": "text-blue-400",
+    "color": "blue",
+    "bulletColor": "blueBullet",
     "bullets": [
       "Built Azure-hosted analytics dashboards with Angular and TypeScript, increasing user adoption by 20%",
       "Designed scalable REST APIs in C# and .NET Core with Redis caching, maintaining sub-3-second latency under high concurrency",
@@ -21,8 +21,8 @@
     "location": "Rochester, NY",
     "start": "Jan 2024",
     "end": "Aug 2024",
-    "color": "bg-purple-400",
-    "bulletColor": "text-purple-400",
+    "color": "purple",
+    "bulletColor": "purpleBullet",
     "bullets": [
       "Led recitations covering supervised/unsupervised learning, model evaluation, and feature engineering for 70+ students",
       "Evaluated and debugged ML pipelines using NumPy, Pandas, scikit-learn, and PyTorch",
@@ -35,8 +35,8 @@
     "location": "Pune, India",
     "start": "Aug 2019",
     "end": "July 2022",
-    "color": "bg-amber-400",
-    "bulletColor": "text-amber-400",
+    "color": "amber",
+    "bulletColor": "amberBullet",
     "bullets": [
       "Managed 9 enterprise SAP ERP systems ensuring 99.9% uptime across dev, QA, and production environments",
       "Achieved 98% SLA compliance through incident triage and resolution via ServiceNow",
