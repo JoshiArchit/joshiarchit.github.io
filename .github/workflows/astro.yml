@@ -72,6 +72,9 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          STEAM_ID_64: ${{ secrets.STEAM_ID_64 }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
