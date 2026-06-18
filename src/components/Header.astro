@@ -1,23 +1,5 @@
 ---
-// TODO: Move it to Steam component later once architected
-let steamData: {
-  personaname: string;
-  avatarfull: string;
-  personastate: number;
-} | null = null;
-
-try {
-  const key = import.meta.env.STEAM_API_KEY;
-  const steamId = import.meta.env.STEAM_ID_64;
-  const res = await fetch(
-    `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${key}&steamids=${steamId}`,
-  );
-  const data = await res.json();
-  steamData = data.response.players[0] ?? null;
-  console.error(steamData?.personaname);
-} catch (err) {
-  console.error("Steam API fetch failed during build:", err);
-}
+import SteamModal from "./steam/SteamModal.astro";
 ---
 
 <header
@@ -35,11 +17,10 @@ try {
     <button
       id="steam"
       class="hover:animate-pulse hover:cursor-pointer"
-      title={steamData?.personaname ?? "Steam"}
-      data-steam={JSON.stringify(steamData)}
     >
       <i id="steam-icon" class="fa-brands fa-steam"></i>
     </button>
+    <SteamModal/>
     <button id="theme-toggle" class="hover:animate-bounce hover:cursor-pointer">
       <i id="theme-icon" class="fa-regular fa-sun"></i>
     </button>

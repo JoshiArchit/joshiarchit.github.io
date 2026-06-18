@@ -2,11 +2,13 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+import { initSteamData } from "../components/steam/fetchSteamData";
 
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
+await initSteamData();
 ---
 
 <html lang="en">

@@ -1,0 +1,27 @@
+---
+import { steamDataIsAvailable } from "./fetchSteamData";
+---
+
+<dialog
+  id="steam-modal"
+  class="m-auto rounded-lg bg-zinc-100 p-6 backdrop:bg-black/50 dark:bg-gray-950"
+>
+  {
+    steamDataIsAvailable() ? (
+      <div class="text-white flex flex-col items-center gap-2">Other Components</div>
+    ) : (
+      <p>Oh. You're Here. Im Sorry but I couldn't load Steam data.</p>
+    )
+  }
+  <button id="steam-modal-close" class="mt-4">Close</button>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("steam-modal") as HTMLDialogElement;
+  document
+    .getElementById("steam")
+    ?.addEventListener("click", () => dialog.showModal());
+  document
+    .getElementById("steam-modal-close")
+    ?.addEventListener("click", () => dialog.close());
+</script>
