@@ -1,0 +1,7 @@
+{
+  "blurb": "Pomodoro timers help build focus by breaking work into structured intervals — but on watchOS, that means managing background execution and battery constraints most apps don't face. Built a native Pomodoro timer for watchOS using Swift, driven by a TimerManager built on WKExtendedRuntimeSession to keep sessions running in the background, with a circular progress ring, local notifications on session completion, and customizable durations via a dedicated SettingsView. Covered the core logic and UI with unit and UI tests written in Swift Testing, targeting TimerManager, PomodoroState, and session labels.",
+  "generatedAt": "2026-07-04T23:25:05.615Z",
+  "sourceRepos": [
+    "JoshiArchit/Pomodoro-Timer"
+  ]
+}
