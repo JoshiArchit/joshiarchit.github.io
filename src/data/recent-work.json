@@ -1,0 +1,8 @@
+{
+  "blurb": "Local git repositories often sit scattered across a filesystem with no easy way to see contribution history at a glance. Built GitGrove, a desktop app with Tauri and React that recursively scans directories using Rust's walkdir crate to discover git repos, then renders per-repo contribution graphs and commit stats through a collapsible sidebar — parsing commit data, grouping it by date, and handling edge cases like GitHub noreply email formats to resolve usernames correctly.",
+  "generatedAt": "2026-07-27T12:33:22.724Z",
+  "sourceRepos": [
+    "JoshiArchit/GitGrove",
+    "JoshiArchit/blurbot"
+  ]
+}
