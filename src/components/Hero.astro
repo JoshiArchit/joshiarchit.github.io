@@ -1,82 +1,99 @@
+---
+const ctaClass =
+  "flex items-center justify-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_20px_4px_rgba(59,130,246,0.5)] dark:border-slate-600 dark:bg-black dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]";
+---
+
 <section
-  class="relative flex min-h-[calc(100vh-10vh)] flex-1 items-center justify-center px-24"
+  class="relative flex min-h-[calc(100dvh-4rem)] section-shell flex-1 items-center justify-center overflow-hidden py-12"
 >
   <!-- orb layer -->
   <div class="pulse absolute inset-0 flex items-center justify-center">
     <div
-      class="orb-1 absolute h-96 w-96 -translate-x-20 -translate-y-10 rounded-full bg-purple-300 opacity-30 blur-3xl dark:bg-purple-500"
+      class="orb-1 absolute h-56 w-56 -translate-x-12 -translate-y-6 rounded-full bg-purple-300 opacity-30 blur-3xl md:h-96 md:w-96 md:-translate-x-20 md:-translate-y-10 dark:bg-purple-500"
     >
     </div>
     <div
-      class="orb-2 absolute h-96 w-96 translate-x-20 -translate-y-10 rounded-full bg-blue-300 opacity-30 blur-3xl dark:bg-blue-500"
+      class="orb-2 absolute h-56 w-56 translate-x-12 -translate-y-6 rounded-full bg-blue-300 opacity-30 blur-3xl md:h-96 md:w-96 md:translate-x-20 md:-translate-y-10 dark:bg-blue-500"
     >
     </div>
     <div
-      class="orb-3 absolute h-96 w-96 -translate-x-10 translate-y-16 rounded-full bg-amber-300 opacity-30 blur-3xl dark:bg-amber-500"
+      class="orb-3 absolute h-56 w-56 -translate-x-6 translate-y-10 rounded-full bg-amber-300 opacity-30 blur-3xl md:h-96 md:w-96 md:-translate-x-10 md:translate-y-16 dark:bg-amber-500"
     >
     </div>
     <div
-      class="orb-4 absolute h-96 w-96 translate-x-16 translate-y-16 rounded-full bg-red-300 opacity-30 blur-3xl dark:bg-red-500"
+      class="orb-4 absolute h-56 w-56 translate-x-10 translate-y-10 rounded-full bg-red-300 opacity-30 blur-3xl md:h-96 md:w-96 md:translate-x-16 md:translate-y-16 dark:bg-red-500"
     >
     </div>
   </div>
 
   <!-- text layer -->
-  <div class="slide-in-left relative z-10 flex flex-col items-center gap-4">
-    <div class="flex items-center">
-      <img src="sprite.png" class="h-64 w-64 rounded-full object-cover" />
-      <div class="flex flex-col gap-2">
-        <p class="text-7xl">
-          Hi, I'm <span class="font-semibold">Archit</span>
+  <div
+    class="slide-in-left relative z-10 section-content flex flex-col items-center gap-6"
+  >
+    <div class="flex flex-col items-center gap-4 md:flex-row md:gap-0">
+      <img
+        src="sprite.png"
+        alt="Pixel-art avatar of Archit Joshi"
+        width="256"
+        height="256"
+        decoding="async"
+        class="h-32 w-32 rounded-full object-cover sm:h-44 sm:w-44 md:h-64 md:w-64"
+      />
+      <div class="flex flex-col gap-2 text-center md:text-left">
+        <p class="text-3xl sm:text-5xl lg:text-7xl">
+          Hi, I'm <span class="font-semibold">Archit</span>{" "}
           <span class="wave">👋🏽</span>
         </p>
-        <p class="text-4xl font-light">
-          Software Developer by craft,<br />problem-solver and builder at heart.
+        <p class="text-lg font-light text-balance sm:text-2xl lg:text-4xl">
+          Software Developer by craft, problem-solver and builder at heart.
         </p>
       </div>
     </div>
-    <div class="flex w-2/3 flex-col gap-4 text-center text-xl font-light">
+
+    <div
+      class="flex w-full max-w-2xl flex-col gap-6 text-center text-base font-light sm:text-xl"
+    >
       <p>
         <span class="font-extrabold">Full Stack Engineer</span> who builds end to
         end — from sleek interfaces to robust backends — and explores the edges of
         Machine Learning. Always building on the side, always sharpening my skills,
         and open to new challenges.
       </p>
-      <div class="flex w-full items-center justify-between text-base">
-        <div class="flex gap-2">
-          <a
-            href="#about"
-            class="flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_20px_4px_rgba(59,130,246,0.5)] dark:border-slate-600 dark:bg-black dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-            ><i class="fa-regular fa-circle-user"></i>My Experience</a
-          >
-          <a
-            href="#projects"
-            class="flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_20px_4px_rgba(59,130,246,0.5)] dark:border-slate-600 dark:bg-black dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-            ><i class="fa-regular fa-file-code"></i>View Projects</a
-          >
+      <div
+        class="flex flex-col items-center gap-4 text-base sm:flex-row sm:justify-between"
+      >
+        <div class="flex flex-wrap justify-center gap-2">
+          <a href="#about" class={ctaClass}>
+            <i class="fa-regular fa-circle-user"></i>My Experience
+          </a>
+          <a href="#projects" class={ctaClass}>
+            <i class="fa-regular fa-file-code"></i>View Projects
+          </a>
           <a
             href="/Archit_Joshi_Resume.pdf"
             download="Archit_Joshi_Resume.pdf"
-            class="flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-4 py-2 transition-all ease-in-out hover:shadow-[0_0_20px_4px_rgba(59,130,246,0.5)] dark:border-slate-600 dark:bg-black dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            class={ctaClass}
           >
             <i class="fa-regular fa-file-pdf"></i>Download Resume
           </a>
         </div>
 
-        <div id="hero-socials" class="flex gap-2 text-base">
+        <div id="hero-socials" class="flex items-center gap-2 text-base">
           <p>Find me:</p>
           <a
             href="https://www.github.com/JoshiArchit"
             target="_blank"
             rel="noopener noreferrer"
-            ><i class="fa-brands fa-github text-xl"></i>
-          </a>
+            aria-label="GitHub profile"
+            class="-m-2 p-2"><i class="fa-brands fa-github text-xl"></i></a
+          >
           <a
             href="https://www.linkedin.com/in/archit2904"
             target="_blank"
             rel="noopener noreferrer"
-            ><i class="fa-brands fa-linkedin text-xl"></i>
-          </a>
+            aria-label="LinkedIn profile"
+            class="-m-2 p-2"><i class="fa-brands fa-linkedin text-xl"></i></a
+          >
         </div>
       </div>
     </div>

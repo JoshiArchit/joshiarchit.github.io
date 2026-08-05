@@ -1,21 +1,94 @@
+---
+const links = [
+  { href: "#", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#now", label: "Now" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
 <header
-  class="sticky top-0 z-100 flex h-[10vh] w-full items-center justify-between border-b border-slate-900 bg-zinc-100 px-24 font-light dark:bg-gray-950"
+  class="sticky top-0 z-100 h-16 section-shell border-b border-slate-900 bg-zinc-100 font-light dark:bg-gray-950"
 >
-  <div class="flex items-center gap-4 divide-x-2">
-    <section class="anchors flex gap-5 text-base">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#now">Now</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </section>
+  <div class="flex h-full items-center justify-between">
+    <nav class="anchors hidden gap-5 text-base md:flex">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <!-- Placeholder so the toggle stays right-aligned once the nav is hidden. -->
+    <div class="md:hidden"></div>
+
+    <div class="flex items-center gap-1">
+      <button
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        class="-m-2 p-2 hover:animate-bounce hover:cursor-pointer"
+      >
+        <i id="theme-icon" class="fa-regular fa-sun"></i>
+      </button>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="ml-3 p-2 hover:cursor-pointer md:hidden"
+      >
+        <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
   </div>
-  <div>
-    <button id="theme-toggle" class="hover:animate-bounce hover:cursor-pointer">
-      <i id="theme-icon" class="fa-regular fa-sun"></i>
-    </button>
-  </div>
+
+  <nav
+    id="mobile-menu"
+    hidden
+    class="anchors absolute top-full left-0 flex w-full flex-col border-b border-slate-900 bg-zinc-100 px-4 pb-3 text-base sm:px-8 md:hidden dark:bg-gray-950"
+  >
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class="border-b border-slate-800/20 py-3 last:border-0"
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
 </header>
 
-<!-- bg-[radial-gradient(circle,#c084fc_0%,#6b21a8_100%)] -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+
+  let isOpen = false;
+
+  const setMenu = (open: boolean) => {
+    if (!menu) return;
+    isOpen = open;
+    menu.hidden = !open;
+    menuToggle?.setAttribute("aria-expanded", String(open));
+    menuToggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (menuIcon) {
+      menuIcon.className = `fa-solid ${open ? "fa-xmark" : "fa-bars"} text-lg`;
+    }
+  };
+
+  menuToggle?.addEventListener("click", () => setMenu(!isOpen));
+
+  // Anchor links don't navigate, so close the panel by hand.
+  menu
+    ?.querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+  // Leaving the breakpoint while open would otherwise strand the panel state.
+  window
+    .matchMedia("(min-width: 48rem)")
+    .addEventListener("change", (event) => {
+      if (event.matches) setMenu(false);
+    });
+</script>

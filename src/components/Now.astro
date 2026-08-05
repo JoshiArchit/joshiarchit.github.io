@@ -26,17 +26,19 @@ const heading =
   blurb && (
     <section
       id="now"
-      class="relative flex w-full flex-1 flex-col items-center justify-center gap-8 px-24"
+      class="relative flex section-shell flex-1 flex-col items-center justify-center gap-8 pb-12"
     >
-      <div class="mt-8 flex flex-col items-center justify-center gap-2">
-        <h2 class="text-4xl font-semibold">Currently Building</h2>
-        <p class="w-2/3 text-center">
+      <div class="flex flex-col items-center justify-center gap-2">
+        <h2 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+          Currently Building
+        </h2>
+        <p class="w-full max-w-2xl text-center">
           The work that isn't finished yet — pulled straight from what I've been
           committing lately.
         </p>
       </div>
 
-      <div class="flex w-full max-w-4xl flex-col gap-4 rounded-lg border border-slate-700 px-8 py-6 hover:bg-slate-200 dark:hover:bg-slate-900">
+      <div class="flex w-full max-w-4xl flex-col gap-4 rounded-lg border border-slate-700 px-5 py-5 hover:bg-slate-200 sm:px-8 sm:py-6 dark:hover:bg-slate-900">
         <div class="flex items-center justify-between gap-4">
           <span class="flex items-center gap-2 text-xs font-semibold tracking-widest text-green-700 uppercase dark:text-green-400">
             <span class="relative flex h-2 w-2">
@@ -52,7 +54,7 @@ const heading =
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${repoName(sourceRepos[0])} on GitHub`}
-              class="flex h-full"
+              class="-m-2 flex h-full p-2"
             >
               <i class="fa-brands fa-github text-2xl transition-colors hover:text-slate-400" />
             </a>
@@ -104,7 +106,7 @@ const heading =
         </div>
       </div>
 
-      <div class="w-full border border-slate-900" />
+      <div class="section-content border border-slate-900" />
     </section>
   )
 }

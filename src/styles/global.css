@@ -1,11 +1,32 @@
 @import "tailwindcss";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
-* {
-  @apply box-border scroll-pt-[10vh] scroll-smooth transition-all ease-in-out;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Anchor offset must stay in sync with the header's h-16. The overflow guard
+   belongs here rather than on body — on body it makes body a scroll container
+   and the sticky header stops sticking. */
+html {
+  @apply scroll-pt-16 scroll-smooth;
+  overflow-x: hidden;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* Tailwind v4's preflight dropped this. Without it a display utility on an
+   element outranks the UA stylesheet and [hidden] stops hiding anything. */
+[hidden] {
+  display: none !important;
+}
+
+/* Horizontal gutters every full-width section shares, so the padding scale
+   can't drift apart section by section. */
+@utility section-shell {
+  @apply w-full px-4 sm:px-8 lg:px-24;
+}
+
+/* The measure content is centred to inside a section-shell. */
+@utility section-content {
+  @apply mx-auto w-full max-w-6xl;
+}
 
 @keyframes slideInLeft {
   from {
@@ -76,4 +97,18 @@
 
 .pulse-light {
   animation: pulse 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
