@@ -11,30 +11,35 @@ const colorMap: Record<string, string> = {
 
 <section
   id="education"
-  class="relative flex w-full flex-1 flex-col items-center gap-8 px-24"
+  class="relative flex section-shell flex-1 flex-col items-center gap-8 pb-12"
 >
-  <div class="flex w-full max-w-6xl flex-col gap-12 md:flex-row">
-    <section class="mt-8 flex flex-col gap-8 md:w-3/5">
-      <h2 class="text-4xl font-semibold">Education</h2>
-      <div class="relative flex flex-col gap-8 border-l border-slate-700 pl-8">
+  <div class="section-content flex flex-col gap-8 md:flex-row md:gap-0">
+    <!-- pr-12 keeps the right-aligned date ranges off the column divider. -->
+    <section class="flex flex-col gap-8 md:w-3/5 md:pr-12">
+      <h2 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Education</h2>
+      <div
+        class="relative flex flex-col gap-8 border-l border-slate-700 pl-6 sm:pl-8"
+      >
         {
           degrees.map((degree) => (
             <div class="relative flex flex-col gap-2">
               <div
-                class={`absolute -left-10 h-4 w-4 rounded-full ${colorMap[degree.background]}`}
+                class={`absolute -left-8 h-4 w-4 rounded-full sm:-left-10 ${colorMap[degree.background]}`}
               />
 
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                 <div class="flex-col">
-                  <h3 class="text-xl font-semibold">{degree.degree}</h3>
+                  <h3 class="text-lg font-semibold sm:text-xl">
+                    {degree.degree}
+                  </h3>
                   <h4>{degree.major}</h4>
                 </div>
-                <span class="flex h-full text-sm text-slate-700 dark:text-slate-400">
+                <span class="text-sm text-slate-700 dark:text-slate-400">
                   {degree.start} – {degree.end}
                 </span>
               </div>
 
-              <div class="flex items-center gap-2 text-slate-700 dark:text-slate-400">
+              <div class="flex flex-wrap items-center gap-2 text-slate-700 dark:text-slate-400">
                 <i class="fa-solid fa-graduation-cap" />
                 <span>{degree.university}</span>
                 <span>·</span>
@@ -42,7 +47,7 @@ const colorMap: Record<string, string> = {
               </div>
 
               <div>
-                <ul class="text-sm text-slate-700 dark:text-slate-300">
+                <ul class="flex flex-col gap-1 text-sm text-slate-700 dark:text-slate-300">
                   {degree.bullets.map((bullet) => (
                     <li class="flex gap-2">
                       <i
@@ -59,8 +64,13 @@ const colorMap: Record<string, string> = {
       </div>
     </section>
 
-    <section id="awards" class="mt-8 flex flex-col gap-4 md:w-2/5">
-      <h2 class="text-4xl font-semibold">Awards & Certifications</h2>
+    <section
+      id="awards"
+      class="flex flex-col gap-4 border-t border-slate-700 pt-8 md:w-2/5 md:border-t-0 md:border-l md:pt-0 md:pl-12"
+    >
+      <h2 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+        Awards & Certifications
+      </h2>
 
       <div class="flex flex-col gap-2">
         <span
@@ -90,5 +100,5 @@ const colorMap: Record<string, string> = {
     </section>
   </div>
 
-  <div class="w-full border border-slate-900"></div>
+  <div class="section-content border border-slate-900"></div>
 </section>
