@@ -1,0 +1,110 @@
+---
+import recentWork from "../data/recent-work.json";
+
+const { blurb, generatedAt, sourceRepos = [] } = recentWork;
+
+// The blurb is agent-generated prose with markdown-style inline code. Split on
+// backtick pairs so code spans render as <code> without ever needing set:html.
+const segments = blurb ? blurb.split(/`([^`]+)`/g) : [];
+
+// Fixed to UTC so the rendered date doesn't drift with the build machine.
+const updated = generatedAt
+  ? new Date(generatedAt).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    })
+  : null;
+
+const repoName = (repo: string) => repo.split("/")[1] ?? repo;
+const heading =
+  sourceRepos.length === 1 ? repoName(sourceRepos[0]) : "Latest Work";
+---
+
+{
+  blurb && (
+    <section
+      id="now"
+      class="relative flex w-full flex-1 flex-col items-center justify-center gap-8 px-24"
+    >
+      <div class="mt-8 flex flex-col items-center justify-center gap-2">
+        <h2 class="text-4xl font-semibold">Currently Building</h2>
+        <p class="w-2/3 text-center">
+          The work that isn't finished yet — pulled straight from what I've been
+          committing lately.
+        </p>
+      </div>
+
+      <div class="flex w-full max-w-4xl flex-col gap-4 rounded-lg border border-slate-700 px-8 py-6 hover:bg-slate-200 dark:hover:bg-slate-900">
+        <div class="flex items-center justify-between gap-4">
+          <span class="flex items-center gap-2 text-xs font-semibold tracking-widest text-green-700 uppercase dark:text-green-400">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-600 opacity-75 dark:bg-green-400" />
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-green-600 dark:bg-green-400" />
+            </span>
+            In Progress
+          </span>
+
+          {sourceRepos.length === 1 && (
+            <a
+              href={`https://github.com/${sourceRepos[0]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${repoName(sourceRepos[0])} on GitHub`}
+              class="flex h-full"
+            >
+              <i class="fa-brands fa-github text-2xl transition-colors hover:text-slate-400" />
+            </a>
+          )}
+        </div>
+
+        <h4 class="flex items-center gap-3 text-2xl font-light">
+          <i class="fa-solid fa-code-branch text-lg text-blue-600 dark:text-blue-400" />
+          {heading}
+        </h4>
+
+        <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+          {segments.map((segment, i) =>
+            i % 2 === 1 ? (
+              <code class="rounded bg-slate-200 px-1.5 py-0.5 font-mono text-[0.8em] text-slate-900 dark:bg-slate-800 dark:text-slate-200">
+                {segment}
+              </code>
+            ) : (
+              segment
+            ),
+          )}
+        </p>
+
+        <hr class="border-slate-700" />
+
+        <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-500">
+          {updated && (
+            <span class="flex items-center gap-2">
+              <i class="fa-regular fa-clock" />
+              Auto-updated {updated}
+            </span>
+          )}
+
+          {sourceRepos.length > 0 && (
+            <span class="flex flex-wrap items-center gap-2">
+              {sourceRepos.map((repo) => (
+                <a
+                  href={`https://github.com/${repo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-1.5 rounded-full border border-slate-700 px-3 py-1 transition-colors hover:text-slate-900 dark:hover:text-slate-200"
+                >
+                  <i class="fa-brands fa-github" />
+                  {repoName(repo)}
+                </a>
+              ))}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <div class="w-full border border-slate-900" />
+    </section>
+  )
+}
