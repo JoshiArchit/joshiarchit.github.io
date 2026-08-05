@@ -1,0 +1,7 @@
+{
+  "blurb": "Developers with dozens of local repos often lose track of what's where and how active each project really is. Built GitGrove, a Tauri desktop app for scanning and visualizing local git repositories — featuring a repo summary card with language breakdown via a donut chart, a contribution graph, and single-repo or recursive directory scanning. Added a `usePersistedRepoList` hook backed by `tauri-plugin-store` to persist scanned repos across restarts, along with collapsible sections, responsive layout fixes, and Rust-side functions using `tokei` for code statistics.",
+  "generatedAt": "2026-08-03T12:33:10.220Z",
+  "sourceRepos": [
+    "JoshiArchit/GitGrove"
+  ]
+}
