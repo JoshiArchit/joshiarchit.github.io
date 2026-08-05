@@ -11,10 +11,10 @@ const colorMap: Record<string, string> = {
 
 <section
   id="education"
-  class="relative flex w-full flex-1 flex-col items-center gap-8 px-24 py-24"
+  class="relative flex w-full flex-1 flex-col items-center gap-8 px-24"
 >
   <div class="flex w-full max-w-6xl flex-col gap-12 md:flex-row">
-    <section class="flex flex-col gap-8 md:w-3/5">
+    <section class="mt-8 flex flex-col gap-8 md:w-3/5">
       <h2 class="text-4xl font-semibold">Education</h2>
       <div class="relative flex flex-col gap-8 border-l border-slate-700 pl-8">
         {
@@ -44,7 +44,7 @@ const colorMap: Record<string, string> = {
               <div>
                 <ul class="text-sm text-slate-700 dark:text-slate-300">
                   {degree.bullets.map((bullet) => (
-                    <li>
+                    <li class="flex gap-2">
                       <i
                         class={`fa-solid fa-chevron-right mt-1 ${colorMap[degree.bulletColor]}`}
                       />
@@ -59,7 +59,7 @@ const colorMap: Record<string, string> = {
       </div>
     </section>
 
-    <section id="awards" class="flex flex-col gap-4 md:w-2/5">
+    <section id="awards" class="mt-8 flex flex-col gap-4 md:w-2/5">
       <h2 class="text-4xl font-semibold">Awards & Certifications</h2>
 
       <div class="flex flex-col gap-2">
