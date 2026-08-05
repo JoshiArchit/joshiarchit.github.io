@@ -11,12 +11,9 @@ const colorMap: Record<string, string> = {
 };
 ---
 
-<section id="work" class="flex w-4/7 flex-col gap-8">
+<section id="work" class="flex w-full max-w-5xl flex-col gap-8">
   <h2 class="text-4xl font-semibold">Experience</h2>
-  <div
-    id="work"
-    class="relative flex flex-col gap-8 border-l border-slate-700 pl-8"
-  >
+  <div class="relative flex flex-col gap-8 border-l border-slate-700 pl-8">
     {
       jobs.map((job) => (
         <div class="relative flex flex-col gap-2">
