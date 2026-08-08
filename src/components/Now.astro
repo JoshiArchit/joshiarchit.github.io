@@ -1,11 +1,19 @@
 ---
 import recentWork from "../data/recent-work.json";
 
-const { blurb, generatedAt, sourceRepos = [] } = recentWork;
+const { entries = [], generatedAt } = recentWork;
 
-// The blurb is agent-generated prose with markdown-style inline code. Split on
-// backtick pairs so code spans render as <code> without ever needing set:html.
-const segments = blurb ? blurb.split(/`([^`]+)`/g) : [];
+const repoName = (repo: string) => repo.split("/")[1] ?? repo;
+
+// The generator caps the feed at three repos; slice defensively so a longer
+// payload can never blow the carousel out.
+const slides = entries.slice(0, 3).map((entry) => ({
+  repo: entry.repo,
+  name: repoName(entry.repo),
+  // Blurbs are agent-generated prose with markdown-style inline code. Split on
+  // backtick pairs so code spans render as <code> without ever needing set:html.
+  segments: entry.blurb ? entry.blurb.split(/`([^`]+)`/g) : [],
+}));
 
 // Fixed to UTC so the rendered date doesn't drift with the build machine.
 const updated = generatedAt
@@ -16,14 +24,10 @@ const updated = generatedAt
       timeZone: "UTC",
     })
   : null;
-
-const repoName = (repo: string) => repo.split("/")[1] ?? repo;
-const heading =
-  sourceRepos.length === 1 ? repoName(sourceRepos[0]) : "Latest Work";
 ---
 
 {
-  blurb && (
+  slides.length > 0 && (
     <section
       id="now"
       class="relative flex section-shell flex-1 flex-col items-center justify-center gap-8 pb-12"
@@ -38,70 +42,111 @@ const heading =
         </p>
       </div>
 
-      <div class="flex w-full max-w-4xl flex-col gap-4 rounded-lg border border-slate-700 px-5 py-5 hover:bg-slate-200 sm:px-8 sm:py-6 dark:hover:bg-slate-900">
-        <div class="flex items-center justify-between gap-4">
-          <span class="flex items-center gap-2 text-xs font-semibold tracking-widest text-green-700 uppercase dark:text-green-400">
-            <span class="relative flex h-2 w-2">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-600 opacity-75 dark:bg-green-400" />
-              <span class="relative inline-flex h-2 w-2 rounded-full bg-green-600 dark:bg-green-400" />
-            </span>
-            In Progress
-          </span>
-
-          {sourceRepos.length === 1 && (
-            <a
-              href={`https://github.com/${sourceRepos[0]}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${repoName(sourceRepos[0])} on GitHub`}
-              class="-m-2 flex h-full p-2"
+      <div class="flex w-full max-w-4xl flex-col gap-4">
+        <div
+          id="now-track"
+          class="now-track flex w-full snap-x snap-mandatory overflow-x-auto"
+          role="group"
+          aria-roledescription="carousel"
+          aria-label="Recent work"
+          tabindex="0"
+        >
+          {slides.map((slide, index) => (
+            <article
+              class="flex w-full shrink-0 snap-start flex-col gap-4 rounded-lg border border-slate-700 px-5 py-5 hover:bg-slate-200 sm:px-8 sm:py-6 dark:hover:bg-slate-900"
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${slides.length}: ${slide.name}`}
             >
-              <i class="fa-brands fa-github text-2xl transition-colors hover:text-slate-400" />
-            </a>
-          )}
+              <div class="flex items-center justify-between gap-4">
+                <span class="flex items-center gap-2 text-xs font-semibold tracking-widest text-green-700 uppercase dark:text-green-400">
+                  <span class="relative flex h-2 w-2">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-600 opacity-75 dark:bg-green-400" />
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-green-600 dark:bg-green-400" />
+                  </span>
+                  In Progress
+                </span>
+
+                <a
+                  href={`https://github.com/${slide.repo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${slide.name} on GitHub`}
+                  class="-m-2 flex h-full p-2"
+                >
+                  <i class="fa-brands fa-github text-2xl transition-colors hover:text-slate-400" />
+                </a>
+              </div>
+
+              <h4 class="flex items-center gap-3 text-2xl font-light">
+                <i class="fa-solid fa-code-branch text-lg text-blue-600 dark:text-blue-400" />
+                {slide.name}
+              </h4>
+
+              <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                {slide.segments.map((segment, i) =>
+                  i % 2 === 1 ? (
+                    <code class="rounded bg-slate-200 px-1.5 py-0.5 font-mono text-[0.8em] text-slate-900 dark:bg-slate-800 dark:text-slate-200">
+                      {segment}
+                    </code>
+                  ) : (
+                    segment
+                  ),
+                )}
+              </p>
+            </article>
+          ))}
         </div>
 
-        <h4 class="flex items-center gap-3 text-2xl font-light">
-          <i class="fa-solid fa-code-branch text-lg text-blue-600 dark:text-blue-400" />
-          {heading}
-        </h4>
-
-        <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-          {segments.map((segment, i) =>
-            i % 2 === 1 ? (
-              <code class="rounded bg-slate-200 px-1.5 py-0.5 font-mono text-[0.8em] text-slate-900 dark:bg-slate-800 dark:text-slate-200">
-                {segment}
-              </code>
-            ) : (
-              segment
-            ),
-          )}
-        </p>
-
-        <hr class="border-slate-700" />
-
         <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-500">
-          {updated && (
+          {updated ? (
             <span class="flex items-center gap-2">
               <i class="fa-regular fa-clock" />
               Auto-updated {updated}
             </span>
+          ) : (
+            <span />
           )}
 
-          {sourceRepos.length > 0 && (
-            <span class="flex flex-wrap items-center gap-2">
-              {sourceRepos.map((repo) => (
-                <a
-                  href={`https://github.com/${repo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-1.5 rounded-full border border-slate-700 px-3 py-1 transition-colors hover:text-slate-900 dark:hover:text-slate-200"
-                >
-                  <i class="fa-brands fa-github" />
-                  {repoName(repo)}
-                </a>
-              ))}
-            </span>
+          {slides.length > 1 && (
+            <div class="flex items-center gap-3">
+              <button
+                id="now-prev"
+                type="button"
+                aria-label="Previous project"
+                aria-controls="now-track"
+                class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 transition-colors hover:bg-slate-200 dark:hover:bg-slate-900"
+              >
+                <i class="fa-solid fa-chevron-left" />
+              </button>
+
+              <div class="flex items-center gap-2">
+                {slides.map((slide, index) => (
+                  <button
+                    type="button"
+                    data-now-dot={index}
+                    aria-label={`Show ${slide.name}`}
+                    aria-current={index === 0 ? "true" : "false"}
+                    class:list={[
+                      "h-2 rounded-full transition-all",
+                      index === 0
+                        ? "w-6 bg-green-600 dark:bg-green-400"
+                        : "w-2 bg-slate-400 dark:bg-slate-600",
+                    ]}
+                  />
+                ))}
+              </div>
+
+              <button
+                id="now-next"
+                type="button"
+                aria-label="Next project"
+                aria-controls="now-track"
+                class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 transition-colors hover:bg-slate-200 dark:hover:bg-slate-900"
+              >
+                <i class="fa-solid fa-chevron-right" />
+              </button>
+            </div>
           )}
         </div>
       </div>
@@ -110,3 +155,71 @@ const heading =
     </section>
   )
 }
+
+<style>
+  /* The dots and arrows are the scroll affordance; a raw bar under the card
+     isn't. Swiping and keyboard scrolling still work either way. */
+  .now-track {
+    scrollbar-width: none;
+  }
+
+  .now-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const track = document.getElementById("now-track");
+  const dots = Array.from(
+    document.querySelectorAll<HTMLButtonElement>("[data-now-dot]"),
+  );
+
+  if (track && dots.length > 1) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let active = 0;
+
+    const sync = () => {
+      active = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach((dot, index) => {
+        const on = index === active;
+        dot.setAttribute("aria-current", String(on));
+        dot.classList.toggle("w-6", on);
+        dot.classList.toggle("bg-green-600", on);
+        dot.classList.toggle("dark:bg-green-400", on);
+        dot.classList.toggle("w-2", !on);
+        dot.classList.toggle("bg-slate-400", !on);
+        dot.classList.toggle("dark:bg-slate-600", !on);
+      });
+    };
+
+    // Wraps in both directions so neither arrow is ever a dead end.
+    const goTo = (index: number) => {
+      const target = (index + dots.length) % dots.length;
+      track.scrollTo({
+        left: target * track.clientWidth,
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+      });
+    };
+
+    document
+      .getElementById("now-prev")
+      ?.addEventListener("click", () => goTo(active - 1));
+    document
+      .getElementById("now-next")
+      ?.addEventListener("click", () => goTo(active + 1));
+
+    dots.forEach((dot, index) =>
+      dot.addEventListener("click", () => goTo(index)),
+    );
+
+    let queued = false;
+    track.addEventListener("scroll", () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        sync();
+      });
+    });
+  }
+</script>
