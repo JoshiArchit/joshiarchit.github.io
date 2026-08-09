@@ -1,5 +1,8 @@
 ---
 import projects from "../data/projects.json";
+
+const featured = projects.filter((project) => project.featured);
+const rest = projects.filter((project) => !project.featured);
 ---
 
 <section
@@ -16,11 +19,9 @@ import projects from "../data/projects.json";
     </p>
   </div>
 
-  <div
-    class="section-content grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-  >
+  <div class="section-content grid grid-cols-1 gap-4 md:grid-cols-2">
     {
-      projects.map((project) => (
+      featured.map((project) => (
         <div class="flex w-full flex-col justify-between gap-4 rounded-lg border border-slate-700 px-5 py-5 hover:bg-slate-200 sm:px-8 sm:py-6 dark:hover:bg-slate-900">
           <div class="flex flex-col gap-2">
             <div class="flex items-start justify-between gap-2">
@@ -59,5 +60,75 @@ import projects from "../data/projects.json";
     }
   </div>
 
+  <div class="section-content flex flex-col gap-3">
+    <h3
+      class="text-sm font-semibold tracking-widest text-slate-800 uppercase dark:text-slate-500"
+    >
+      More Projects
+    </h3>
+
+    <div
+      class="flex flex-col divide-y divide-slate-700 rounded-lg border border-slate-700"
+    >
+      {
+        rest.map((project) => (
+          <details name="more-projects" class="group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 hover:bg-slate-200 sm:px-8 dark:hover:bg-slate-900 [&::-webkit-details-marker]:hidden">
+              <div class="flex min-w-0 flex-col gap-1">
+                <span class="text-base font-light sm:text-lg">
+                  {project.title}
+                </span>
+                <span class="text-sm text-slate-600 dark:text-slate-400">
+                  {project.stack}
+                </span>
+              </div>
+              <i class="fa-solid fa-chevron-down shrink-0 text-sm text-slate-600 transition-transform group-open:rotate-180 dark:text-slate-400" />
+            </summary>
+
+            <div class="flex flex-col gap-3 px-5 pt-1 pb-5 sm:px-8">
+              <p class="text-sm text-slate-600 dark:text-slate-400">
+                {project.context}
+              </p>
+              <p class="text-sm">{project.description}</p>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex w-fit items-center gap-2 text-sm transition-colors hover:text-slate-400"
+              >
+                <i class="fa-brands fa-github text-lg" />
+                View on GitHub
+              </a>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+
   <div class="section-content border border-slate-900"></div>
 </section>
+
+<style>
+  details {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size 0.3s ease,
+      content-visibility 0.3s allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    details::details-content {
+      transition: none;
+    }
+  }
+</style>
