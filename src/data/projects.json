@@ -1,5 +1,21 @@
 [
   {
+    "title": "blurbot",
+    "context": "Portfolio sites reduce months of work to a static paragraph that goes stale the moment the next commit lands. Keeping a \"recent work\" section fresh by hand is a chore nobody keeps up with.",
+    "description": "An agent pipeline that turns recent GitHub commit activity into portfolio-ready blurbs. It gathers activity via the GitHub API, drafts copy with Claude running headless through the Claude Code CLI, critiques the draft against a style guide, and opens a PR to this very site — nothing lands until the PR is reviewed and merged.",
+    "github": "https://github.com/JoshiArchit/blurbot",
+    "stack": "TypeScript, Node.js, Claude Code CLI, Octokit, GitHub Actions",
+    "featured": true
+  },
+  {
+    "title": "resyncme",
+    "context": "Résumé, pronounced by a sysadmin. The resume lives in Overleaf, but the copy deployed on the portfolio was always one version behind.",
+    "description": "A scheduled sync agent that pulls the LaTeX source from Overleaf, uses a SHA-256 checksum gate to skip runs when nothing changed, compiles the PDF with pdflatex, and opens a PR deploying the fresh copy to the portfolio — closing superseded PRs along the way.",
+    "github": "https://github.com/JoshiArchit/resyncme",
+    "stack": "Python, LaTeX, GitHub Actions, GitHub API",
+    "featured": true
+  },
+  {
     "title": "MyAnimeList Data Analysis",
     "context": "MyAnimeList tracks anime and manga for millions of users — and with 80M+ records on Kaggle, it's a great candidate for serious data analysis.",
     "description": "A three-phase project comparing PostgreSQL and MongoDB on the MyAnimeList dataset — covering data modeling, query optimization, indexing, and itemset mining using the Apriori algorithm.",
@@ -46,13 +62,15 @@
     "context": "NYC sees thousands of vehicle collisions every year — and NYC Open Data makes that history publicly available. With over a million records on hand, it's a rich dataset for uncovering patterns in urban traffic safety.",
     "description": "A data engineering and analysis project focused on NYC motor vehicle collision data between summer 2019 and 2020. Built an ETL pipeline in Python to extract, clean, and load data into PostgreSQL — then queried it to uncover weekly and hourly accident trends, year-over-year comparisons, and the 100 most accident-prone consecutive days, visualized using heat maps.",
     "github": "https://github.com/JoshiArchit/NYC-Vehicle-Collision-Data-Analysis",
-    "stack": "Python, PostgreSQL, Pandas, Folium, scikit-learn"
+    "stack": "Python, PostgreSQL, Pandas, Folium, scikit-learn",
+    "featured": true
   },
   {
     "title": "Studying Degradation in Graph HyperNetworks",
     "context": "Graph HyperNetworks predict neural network weights directly from computational graphs — eliminating the need for expensive optimization processes like SGD. Understanding how they degrade under limited data is key to making them practical in low-resource scenarios.",
     "description": "A research study analyzing how GHN-3 performance degrades across varying training data sizes using CIFAR-10 and CIFAR-100. Evaluated 80 standard PyTorch architectures and found that model architecture — not data volume — is the dominant factor in performance, with CNN-heavy residual models consistently outperforming others. Also demonstrated GHN-3's transfer learning potential across datasets.",
     "github": "https://github.com/JoshiArchit/GHNGraphs/",
-    "stack": "Python, PyTorch, Matplotlib, scikit-learn"
+    "stack": "Python, PyTorch, Matplotlib, scikit-learn",
+    "featured": true
   }
 ]
