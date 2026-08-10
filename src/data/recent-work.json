@@ -2,8 +2,8 @@
   "entries": [
     {
       "repo": "JoshiArchit/GitGrove",
-      "blurb": "Managing local git repos often means juggling multiple projects scattered across a filesystem, each with its own state and history to track. GitGrove is a desktop app built with Tauri for scanning and organizing multiple git repositories from one dashboard, with per-repo summaries showing language breakdowns via `tokei` and commit activity via a contribution graph. Recent work added support for tracking a single repository alongside recursive directory scans, and persisted the scanned repo list across app restarts using `tauri-plugin-store`.",
-      "activityDigest": "e6aefc36a0cc"
+      "blurb": "Managing a dozen local clones from the command line means bouncing between directories just to see what's changed where. GitGrove is a multi-repo git manager that surfaces that state in one place — built support for tracking a single repository alongside recursive folder scans, and added a hook that persists the scanned repo list across restarts using `tauri-plugin-store`.",
+      "activityDigest": "ba47709dd01f"
     },
     {
       "repo": "JoshiArchit/blurbot",
@@ -16,5 +16,5 @@
       "activityDigest": "1c1f205790c7"
     }
   ],
-  "generatedAt": "2026-08-07T00:24:42.547Z"
+  "generatedAt": "2026-08-10T10:25:45.363Z"
 }
