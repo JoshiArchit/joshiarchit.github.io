@@ -2,9 +2,9 @@
   "entries": [
     {
       "repo": "JoshiArchit/GitGrove",
-      "blurb": "Managing several git repositories at once often means juggling separate tools for issue tracking and task breakdowns — GitGrove brings that into one desktop app. Built out a branch-scoped Taskboard with full Work Item and Task CRUD, along with a Backlog list view for tracking work that hasn't hit the board yet.",
-      "activityDigest": "16d5a592b3e7"
+      "blurb": "Developers juggling multiple local repos often lose track of project context once work drifts away from a single codebase. GitGrove is a local-first git repo browser and lightweight project tracker built with Tauri, React, and Rust, and recent work introduced a project-tracking layer that links work items across repos, with markdown support for task and work-item descriptions. Added Board and Backlog views for organizing tasks, giving a clearer picture of what's in progress across every tracked project.",
+      "activityDigest": "c414764e7d0c"
     }
   ],
-  "generatedAt": "2026-09-28T17:35:13.182Z"
+  "generatedAt": "2026-10-05T22:07:26.320Z"
 }
