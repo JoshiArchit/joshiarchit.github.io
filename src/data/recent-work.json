@@ -2,9 +2,14 @@
   "entries": [
     {
       "repo": "JoshiArchit/GitGrove",
-      "blurb": "Managing several git repositories at once often means juggling separate tools for issue tracking and task breakdowns — GitGrove brings that into one desktop app. Built out a branch-scoped Taskboard with full Work Item and Task CRUD, along with a Backlog list view for tracking work that hasn't hit the board yet.",
-      "activityDigest": "16d5a592b3e7"
+      "blurb": "GitGrove is a local-first git repo browser built with Tauri, React, and Rust. Recent work added a project tracking section decoupled from any single repo, letting work items link across projects regardless of which repo they belong to.",
+      "activityDigest": "630e9235791c"
+    },
+    {
+      "repo": "JoshiArchit/blurbot",
+      "blurb": "Blurbot drafts a portfolio blurb from a developer's recent GitHub commits, critiques it against a style guide, and opens a PR with the result. Recent work rewrote that style guide to keep generated blurbs coherent, with local guards ensuring each run reflects current activity.",
+      "activityDigest": "226d0f8fa1bd"
     }
   ],
-  "generatedAt": "2026-09-28T17:35:13.182Z"
+  "generatedAt": "2026-10-06T00:05:49.282Z"
 }
